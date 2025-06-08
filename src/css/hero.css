@@ -1,0 +1,70 @@
+.hero {
+  background-color: var(--Color-Scheme-3-Foreground, #23132b);
+  color: var(--Color-Scheme-1-Text, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.hero-container {
+  flex: 1;
+  max-width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title-hero {
+  font-family: Epilogue;
+  font-weight: 700;
+  font-size: 84px;
+  line-height: 110.00000000000001%;
+  letter-spacing: -1%;
+}
+.hero-button {
+  background-color: var(--Color-Affair, #764191);
+  display: flex;
+  font-family: IBM Plex Sans;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: var(--Color-Scheme-1-Text, #ffffff);
+  border-radius: 12px;
+}
+
+.hero-gallery {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  max-width: 50%;
+}
+
+.hero-img {
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  flex: 1 1 calc(50% - 10px);
+}
+
+.img1 {
+  background-image: url('../img/hero/ren.jpg');
+}
+.img2 {
+  background-image: url('../img/hero/pluto.jpg');
+}
+.img3 {
+  background-image: url('../img/hero/hallow.jpg');
+}
+.img4 {
+  background-image: url('../img/hero/cyn.jpg');
+}
+.img5 {
+  background-image: url('../img/hero/tree.jpg');
+}
+.img6 {
+  background-image: url('../img/hero/logic.jpg');
+}
