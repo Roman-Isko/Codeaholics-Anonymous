@@ -1,3 +1,4 @@
+// alert('api')
 import axios from 'axios';
 
 const BASE_URL = 'https://sound-wave.b.goit.study/api';
@@ -12,3 +13,4 @@ async function getArtists() {
 }
 
 getArtists();
+
