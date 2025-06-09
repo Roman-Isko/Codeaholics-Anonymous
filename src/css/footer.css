@@ -1,7 +1,5 @@
 .footer {
-  background-color: #060307; 
-  color: #f5f5f5;
-  ;
+  background-color: #060307;
 }
 
 /* Верхня частина: логотип + навігація */
@@ -49,8 +47,8 @@
   border: none;
   height: 1px;
   background-color: #2a2a2a;
-  margin: 24px 0 16px;
   width: 100%;
+  margin: 24px 0;
 }
 
 /* Нижня частина: соцмережі + копірайт */
@@ -112,7 +110,7 @@
   }
   .footer-divider {
     margin: 32px 0 24px;
-    width: 80%;
+    width: 100%;
   }
   .footer-bottom {
     flex-direction: row;
