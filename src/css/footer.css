@@ -7,12 +7,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding: 24px 16px 0;
+padding-top: 48px;
+  padding-bottom: 48px;
 }
 
 .footer-logo img {
-  width: 96px;
   height: auto;
   opacity: 0.85;
   transition: opacity 0.3s;
@@ -28,7 +27,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 32px;
   align-items: center;
 }
 .footer-nav a {
@@ -47,28 +46,28 @@
   border: none;
   height: 1px;
   background-color: #2a2a2a;
-  width: 100%;
-  margin: 24px 0;
+  width: calc(100% - 48px);
+ 
 }
 
 /* Нижня частина: соцмережі + копірайт */
 .footer-bottom {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
-  gap: 12px;
-  padding-bottom: 24px;
+  gap: 32px;
+  padding-bottom: 48px;
+  padding-top: 24px;
 }
 
 .footer-socials {
   display: flex;
-  gap: 16px;
+  gap: 32px;
 }
-.footer-socials img {
-  width: 28px;
-  height: 28px;
-  filter: invert(100%);
-  transition: opacity 0.3s;
+.social-icon{
+  width: 40px;
+  height: 40px;
+ 
 }
 .footer-socials img:hover,
 .footer-socials img:focus {
@@ -77,50 +76,68 @@
 
 .footer-copy {
   color: #c4c4c4;
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
   text-align: center;
 }
 
 /* ===== Tablet & up ===== */
 @media (min-width: 768px) {
+
   .footer-top {
-    padding-top: 32px;
+    padding:80px 138px;
     gap: 24px;
+  }
+  .footer-bottom{
+padding: 80px 32px;
+flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    
   }
   .footer-nav ul {
     flex-direction: row;
-    gap: 32px;
   }
-  .footer-copy {
-    font-size: 15px;
+  .footer-socials {
+    gap: 24px;
   }
+  .social-icon{
+    width: 32px;
+    height: 32px;
+  }
+  
 }
 
 /* ===== Desktop (1440px+) ===== */
 @media (min-width: 1440px) {
   .footer-top {
-    flex-direction: row;
+    flex-direction:column;
     justify-content: center;
-    gap: 48px;
-    padding: 40px 0 0;
+    gap: 32px;
+    padding: 80px 400px;
   }
-  .footer-logo img {
-    width: 120px;
-  }
+ 
   .footer-divider {
-    margin: 32px 0 24px;
-    width: 100%;
+    
+    margin: 0 auto;
+   width: calc(100% - 96px);
   }
   .footer-bottom {
     flex-direction: row;
     justify-content: space-between;
-    width: 80%;
-    margin: 0 auto 40px;
+    padding: 80px 64px;
     align-items: center;
-    padding-bottom: 0;
+  }
+  
+  .footer-nav ul {
+    flex-direction: row;
+    gap: 32px;
   }
   .footer-socials {
     gap: 24px;
+  }
+  .social-icon{
+    width: 24px;
+    height: 24px;
   }
 }
