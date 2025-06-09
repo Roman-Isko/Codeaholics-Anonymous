@@ -1,0 +1,143 @@
+.modal-overlay-artist {
+  padding: 64px 16px;
+  background: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.modal-artist {
+  max-width: 288px;
+  max-height: 85%;
+  overflow-y: auto;
+  border-radius: 16px;
+  background-color: #060307;
+}
+
+.container-modal-artist {
+  padding: 52px 8px;
+}
+
+.title-modal-artist {
+  font-family: 'Epilogue', sans-serif;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.image-modal-artist {
+}
+
+.list-info-modal-artist {
+  margin-top: 32px;
+  text-align: left;
+}
+
+.item-info-modal-artist {
+  margin-bottom: 16px;
+}
+
+.title-info-modal-artist {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.text-info-modal-artist {
+  font-size: 18px;
+}
+
+.list-genres-modal-artist {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.item-genres-modal-artist {
+  font-weight: 600;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+.albums-modal-artist {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.cont-albums-modal-artist {
+  border-radius: 16px;
+  padding: 14px 11px;
+  background: #1e1c1f;
+}
+
+.name-album-modal-artist {
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.cont-track-time-link {
+  display: flex;
+  font-weight: 600;
+  font-size: 8px;
+  align-items: center;
+  border-radius: 8px;
+  padding: 4px 0px 4px 12px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.track-album-modal-artist {
+  text-align: left;
+  width: 97px;
+}
+
+.time-album-modal-artist {
+  width: 102px;
+}
+
+.link-album-modal-artist {
+  width: 35px;
+}
+
+.list-track-modal-artist {
+}
+
+.item-track-modal-artist {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  font-size: 12px;
+  padding: 8px 0px 8px 12px;
+}
+
+.item-track-modal-artist:nth-child(even) {
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.name-track-modal-artist {
+  text-align: left;
+  width: 97px;
+}
+
+.time-track-modal-artist {
+  width: 74px;
+}
+
+.icon-track-modal-artist {
+}
