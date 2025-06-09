@@ -1,81 +1,128 @@
 .footer {
-  background-color: #1a1a1a;
+  background-color: #0e0e0e; /* або #1a1a1a — під ваш основний фон */
   color: #f5f5f5;
-  padding: 40px 0 16px;
   font-family: "Inter", sans-serif;
 }
-.footer__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
+
+/* Верхня частина: логотип + навігація */
+.footer-top {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
+  padding: 24px 16px 0;
 }
-.footer__logo img {
-  width: 120px;
+
+.footer-logo img {
+  width: 96px;
+  height: auto;
   opacity: 0.85;
   transition: opacity 0.3s;
 }
-.footer__logo img:hover,
-.footer__logo img:focus {
+.footer-logo img:hover,
+.footer-logo img:focus {
   opacity: 1;
 }
 
-.footer__nav ul {
-  display: flex;
-  gap: 32px;
+.footer-nav ul {
+  list-style: none;
   padding: 0;
   margin: 0;
-  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
 }
-.footer__nav a {
-  color: #f5f5f5;
-  font-size: 16px;
+.footer-nav a {
+  color: #ffffff;
+  font-size: 18px;
   text-decoration: none;
   transition: color 0.3s;
 }
-.footer__nav a:hover,
-.footer__nav a:focus {
+.footer-nav a:hover,
+.footer-nav a:focus {
   color: #7d33ff;
 }
 
-.footer__socials {
-  display: flex;
-  gap: 24px;
+/* Роздільна лінія */
+.footer-divider {
+  border: none;
+  height: 1px;
+  background-color: #2a2a2a;
+  margin: 24px 0 16px;
+  width: 100%;
 }
-.footer__socials a img {
-  width: 24px;
+
+/* Нижня частина: соцмережі + копірайт */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 24px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 16px;
+}
+.footer-socials img {
+  width: 28px;
+  height: 28px;
   filter: invert(100%);
   transition: opacity 0.3s;
 }
-.footer__socials a img:hover,
-.footer__socials a img:focus {
+.footer-socials img:hover,
+.footer-socials img:focus {
   opacity: 0.7;
 }
 
-.footer__copy {
-  margin-top: 24px;
-  font-size: 14px;
+.footer-copy {
   color: #c4c4c4;
+  font-size: 14px;
+  margin: 0;
   text-align: center;
 }
 
-/* Tablet+ */
+/* ===== Tablet & up ===== */
 @media (min-width: 768px) {
-  .footer__inner {
+  .footer-top {
+    padding-top: 32px;
+    gap: 24px;
+  }
+  .footer-nav ul {
     flex-direction: row;
-    justify-content: space-between;
+    gap: 32px;
+  }
+  .footer-copy {
+    font-size: 15px;
   }
 }
 
-/* Desktop+ */
+/* ===== Desktop (1440px+) ===== */
 @media (min-width: 1440px) {
-  .footer__inner {
-    padding: 0 64px;
+  .footer-top {
+    flex-direction: row;
+    justify-content: center;
+    gap: 48px;
+    padding: 40px 0 0;
   }
-  .footer__copy {
-    margin-top: 32px;
+  .footer-logo img {
+    width: 120px;
+  }
+  .footer-divider {
+    margin: 32px 0 24px;
+    width: 80%;
+  }
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto 40px;
+    align-items: center;
+    padding-bottom: 0;
+  }
+  .footer-socials {
+    gap: 24px;
   }
 }
