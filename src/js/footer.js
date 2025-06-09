@@ -1,19 +1,19 @@
-export function createFooter() {
-  const footer = document.createElement("footer");
-  footer.classList.add("footer");
 
+export function createFooter() {
+  // створюємо елемент футеру
+  const el = document.createElement("footer");
+  el.classList.add("footer");
+
+  // поточний рік
   const year = new Date().getFullYear();
 
-  footer.innerHTML = `
+  el.innerHTML = `
     <div class="container footer-container">
-      <!-- 1) Логотип -->
       <div class="footer-left">
         <a href="#root" class="footer-logo" aria-label="Go to top">
           <img src="/src/assets/images/logo-light.svg" alt="ArtistsHub Logo" class="footer-logo-img" />
         </a>
       </div>
-
-      <!-- 2) Блок навігації -->
       <nav class="footer-center" aria-label="Footer navigation">
         <ul class="footer-nav">
           <li><a href="#artists">Artists</a></li>
@@ -21,8 +21,6 @@ export function createFooter() {
           <li><a href="#feedback">Reviews</a></li>
         </ul>
       </nav>
-
-      <!-- 3) Іконки соцмереж -->
       <div class="footer-right" aria-label="Social media links">
         <ul class="footer-socials">
           <li>
@@ -43,14 +41,12 @@ export function createFooter() {
         </ul>
       </div>
     </div>
-
-    <!-- 4) Авторські права -->
     <p class="footer-copy">© ${year} ArtistsHub. All rights reserved.</p>
   `;
 
-  // Плавний скрол для внутрішніх посилань
+  // Плавний скрол для пунктів навігації
   const headerHeight = document.querySelector("header")?.offsetHeight || 0;
-  footer.querySelectorAll(".footer-nav a").forEach(link => {
+  el.querySelectorAll(".footer-nav a").forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
       const target = document.querySelector(link.getAttribute("href"));
@@ -60,11 +56,11 @@ export function createFooter() {
     });
   });
 
-  // Клік по логотипу → на початок сторінки
-  footer.querySelector(".footer-logo").addEventListener("click", e => {
+  // Клік по логотипу — скрол на початок
+  el.querySelector(".footer-logo").addEventListener("click", e => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  return footer;
+  return el;
 }
