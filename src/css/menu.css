@@ -1,0 +1,66 @@
+/* html{
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+
+} 
+
+.logo{
+    z-index: 1001;
+} 
+
+
+
+@media(max-width: 768px){
+    body.lock{
+        overflow:hidden;
+    }
+
+    .menu-list{
+        display: block;
+        position: absolute;
+        overflow: auto;
+        top: 48px;
+        left: 0;
+        right: 0;
+        background-color:  #060307;
+        text-align: center;
+        padding: 20px 0;
+        transform: translateY(-1000px);
+        transition: all 0.3s;
+    }
+    
+    .menu-list.active{
+        transform: translateY(0);
+
+
+    }
+
+    .menu-list-link{
+        display: block;
+        padding: 32px 0;
+        font-size: 26px;
+        line-height: 1.5;
+        border-bottom: 1px solid transparent;
+    }
+
+    .menu-list-link:hover{
+    border-bottom: 1px solid goldenrod;
+
+}
+
+    .menu-btn{
+        display: block;
+        cursor: pointer;
+        border: none;
+        background-color: inherit;
+        z-index: 1001;
+    }
+    .burger-svg{
+        z-index: 1001;
+        position: relative;
+    }
+
+} */
