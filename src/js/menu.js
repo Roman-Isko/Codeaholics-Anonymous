@@ -4,7 +4,7 @@ const menuList = document.querySelector('.header-nav-list');
 const body = document.body;
 const svgBurger = document.querySelector('.burger-svg');
 
-console.log(svgBurger.getAttribute('href'));
+
 
 
 menuBtn.addEventListener('click', openMenu);
