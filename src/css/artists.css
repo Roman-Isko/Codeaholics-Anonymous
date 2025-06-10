@@ -343,31 +343,6 @@ max-width: 340px;
      margin-bottom: 64px;
    }
 
-@media only screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-    padding: 0 32px;
-  }
-}
-
-.wrapper-title {
- max-width: 704px; 
-  height: 146px;
-  text-align: center;
- 
-}
-.subtitle-blog {
-  max-width: 704px;
-  height: 146px;
-  
-}
-.list-cards {
-  display: flex;
- flex-wrap: nowrap;
-  max-width: 704px;
-}
-
-
 
 
 
