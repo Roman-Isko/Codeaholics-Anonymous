@@ -19,12 +19,12 @@
 }
 
 .header-nav-list {
-  /* display: none; */
+  display: none;
 }
 
 .burger-btn {
   border: none;
-  background-color: transparent;
+  background-color: inherit;
 }
 
 .burger-icon {
