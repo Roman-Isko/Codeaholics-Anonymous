@@ -23,9 +23,13 @@
 }
 
 .burger-btn {
-  display: block;
-  background: none;
   border: none;
+  background-color: transparent;
+}
+
+.burger-icon {
+  display: block;
+  fill: #fff;
 }
 
 /* HEADER-TAB and HEADER-DESK*/
@@ -50,7 +54,7 @@
 
   .header-nav-link:hover,
   .header-nav-link:focus {
-    color: #ffffffde;
+    color: #764191;
   }
 
   .burger-btn {
