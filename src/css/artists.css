@@ -42,7 +42,7 @@
   letter-spacing: -0.01em;
   color: #FFF;
 }
-<<<<<<< HEAD
+
 .content {
   display: flex;
   flex-direction: column;
@@ -62,27 +62,13 @@
     flex-direction: column;
     gap: 16px;
     flex-wrap: wrap;
-=======
-
-.card-grid {
-  border-radius: 16px;
-  width: 288px;
-  height: 177px;
-  padding-bottom: 24px;
->>>>>>> e709545 ( add changed css html)
-
 }
 
 .list-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  max-width: 288px;
-<<<<<<< HEAD
- height: 80px;
-=======
     height: 80px;
->>>>>>> e709545 ( add changed css html)
   padding-bottom: 16px;
 }
 
@@ -208,10 +194,9 @@
   height: 24px;
   order: 1;
   padding-top: 5px;
-<<<<<<< HEAD
+
   fill: currentColor;
-=======
->>>>>>> e709545 ( add changed css html)
+
 
 }
 
@@ -246,7 +231,6 @@
   margin-bottom: 64px;
 }
 
-<<<<<<< HEAD
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
   .container {
@@ -359,20 +343,36 @@ max-width: 340px;
      margin-bottom: 64px;
    }
 
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+.wrapper-title {
+ max-width: 704px; 
+  height: 146px;
+  text-align: center;
+ 
+}
+.subtitle-blog {
+  max-width: 704px;
+  height: 146px;
+  
+}
+.list-cards {
+  display: flex;
+ flex-wrap: nowrap;
+  max-width: 704px;
+}
 
 
 
 
 
-=======
 
 
 
 
 
-
-
-
-/* Styles for Tablet devices */
-/* Styles for Desktop devices */
->>>>>>> e709545 ( add changed css html)
