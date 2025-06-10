@@ -47,7 +47,7 @@
   border-radius: 16px;
   width: 288px;
   height: 177px;
-  padding-bottom: 24px;
+  margin-bottom: 24px;
 
 }
 
@@ -55,7 +55,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  max-width: 288px;
+  /* max-width: 288px; */
     height: 80px;
   padding-bottom: 16px;
 }
@@ -216,13 +216,37 @@
   margin-bottom: 64px;
 }
 
-
-
-
-
-
-
-
-
 /* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+.wrapper-title {
+ max-width: 704px; 
+  height: 146px;
+  text-align: center;
+ 
+}
+.subtitle-blog {
+  max-width: 704px;
+  height: 146px;
+  
+}
+.list-cards {
+  display: flex;
+ flex-wrap: nowrap;
+  max-width: 704px;
+}
+
+
+
+
+
+
+
+
+
 /* Styles for Desktop devices */
