@@ -1,5 +1,7 @@
-.header {
-  position: fixed;
+/* HEADER-MOB*/
+
+.header-section {
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -10,12 +12,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px;
 }
 
 .header-logo {
-  display: flex;
-  align-items: center;
   fill: #764191;
 }
 
@@ -24,18 +23,18 @@
 }
 
 .burger-btn {
-  display: block;
-  background: none;
   border: none;
+  background-color: transparent;
 }
 
-/* HEADER-TAB */
+.burger-icon {
+  display: block;
+  fill: #fff;
+}
+
+/* HEADER-TAB and HEADER-DESK*/
 
 @media (min-width: 768px) {
-  .header-container {
-    padding: 22px 64px;
-  }
-
   .header-nav {
     display: flex;
     justify-content: space-between;
@@ -50,19 +49,12 @@
   .header-nav-list {
     display: flex;
     gap: 32px;
-  }
-
-  .header-nav-link {
-    color: white;
-    text-decoration: none;
-    font-weight: 400;
     font-size: 18px;
-    line-height: 1.5;
   }
 
   .header-nav-link:hover,
   .header-nav-link:focus {
-    color: #ffffffe1;
+    color: #764191;
   }
 
   .burger-btn {
