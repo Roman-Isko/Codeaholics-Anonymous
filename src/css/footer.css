@@ -5,10 +5,12 @@
 /* Верхня частина: логотип + навігація */
 .footer-top {
   display: flex;
+  gap: 32px;
   flex-direction: column;
   align-items: center;
-padding-top: 48px;
-  padding-bottom: 48px;
+  padding: 40px 20px;
+
+
 }
 
 .footer-logo img {
@@ -46,7 +48,7 @@ padding-top: 48px;
   border: none;
   height: 1px;
   background-color: #2a2a2a;
-  width: calc(100% - 48px);
+ width: calc(100% - 40px);
  
 }
 
@@ -55,14 +57,13 @@ padding-top: 48px;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  gap: 32px;
-  padding-bottom: 48px;
-  padding-top: 24px;
+ padding: 40px 20px;
 }
 
 .footer-socials {
   display: flex;
   gap: 32px;
+  padding: 0 48px 32px 48px;
 }
 .social-icon{
   width: 40px;
@@ -77,8 +78,8 @@ padding-top: 48px;
 .footer-copy {
   color: #c4c4c4;
   font-size: 16px;
-  margin: 0;
   text-align: center;
+  padding: 0 1px 16px 1px;
 }
 
 /* ===== Tablet & up ===== */
@@ -89,23 +90,31 @@ padding-top: 48px;
     gap: 24px;
   }
   .footer-bottom{
-padding: 80px 32px;
+padding: 32px 32px;
 flex-direction:row;
     justify-content: space-between;
     align-items: center;
     
   }
+.footer-logo-icon {
+    width: 116px;
+    height: 45px;
+  }
   .footer-nav ul {
     flex-direction: row;
   }
   .footer-socials {
+    padding: 0;
+  
     gap: 24px;
   }
   .social-icon{
     width: 32px;
     height: 32px;
   }
-  
+  .footer-copy {
+    padding: 0 0 8px 0px;
+  }
 }
 
 /* ===== Desktop (1440px+) ===== */
@@ -125,7 +134,7 @@ flex-direction:row;
   .footer-bottom {
     flex-direction: row;
     justify-content: space-between;
-    padding: 80px 64px;
+    padding: 32px 64px;
     align-items: center;
   }
   
