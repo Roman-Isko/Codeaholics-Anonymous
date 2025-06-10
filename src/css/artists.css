@@ -166,8 +166,7 @@
   /* Сховати надлишковий текст */
 }
 
-/* .btn {
-
+/ .btn-learm{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -186,7 +185,7 @@
   margin-bottom: 32px;
   outline: none;
 
-} */
+} 
 
 .btn-icon {
   max-width: 24px;
