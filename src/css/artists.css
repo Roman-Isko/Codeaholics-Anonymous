@@ -166,7 +166,7 @@
   /* Сховати надлишковий текст */
 }
 
-/ .btn-learm{
+ .btn-learm{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
