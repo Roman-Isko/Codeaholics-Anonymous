@@ -13,6 +13,11 @@ body::-webkit-scrollbar{
     body.lock{
         overflow: hidden;
     }
+
+    .header-logo-link{
+        z-index: 1001;
+        position: relative;
+    }
     
 
     .header-nav-list{
@@ -32,6 +37,7 @@ body::-webkit-scrollbar{
     
     .header-nav-list.active{
         transform: translateY(0);
+        background-color: black;
 
 
     }

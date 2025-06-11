@@ -13,7 +13,7 @@ menuList.addEventListener('click', (evt) => {
     if(evt.target.nodeName === 'A') {
         
         menuList.classList.remove('active');
-        svgBurger.setAttribute('href', './img/symbol-defs.svg#./img/images/symbol-defs.svg#icon-menu-alt-right');
+        svgBurger.setAttribute('href', './img/symbol-defs.svg#icon-menu-alt-right');
         body.classList.remove('lock');
 
     }
@@ -26,7 +26,7 @@ function openMenu(){
     menuList.classList.toggle('active');
 
     if(menuList.classList.contains('active')){
-        svgBurger.setAttribute('href', './img/symbol-defs.svg#icon-x');
+        svgBurger.setAttribute('href', './img/symbol-defs.svg#icon-Icon-x');
         body.classList.add('lock');
     }else{
         svgBurger.setAttribute('href', './img/symbol-defs.svg#icon-menu-alt-right');
