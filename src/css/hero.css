@@ -84,8 +84,6 @@
   background-position: center;
 
   background-image: url('/img/mob-1х.jpg');
-
-  background-blend-mode: multiply;
 }
 
 @media only screen and (min-resolution: 2x),
@@ -112,7 +110,7 @@
     margin-bottom: 32px;
   }
   .hero-button {
-    width: auto;
+    width: 246px;
     padding-left: 44px;
     margin-bottom: 0;
   }
@@ -149,6 +147,9 @@
   }
   .title-hero {
     font-size: 84px;
+  }
+  .hero-button {
+    width: 206px;
   }
   .hero-img {
     background-image: url('/img/desk-1x.jpg');
