@@ -1,0 +1,152 @@
+.footer {
+  background-color: #060307;
+}
+
+/* Верхня частина: логотип + навігація */
+.footer-top {
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+
+
+}
+
+.footer-logo img {
+  height: auto;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+.footer-logo img:hover,
+.footer-logo img:focus {
+  opacity: 1;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+.footer-nav a {
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-nav a:hover,
+.footer-nav a:focus {
+  color: #7d33ff;
+}
+
+/* Роздільна лінія */
+.footer-divider {
+  border: none;
+  height: 1px;
+  background-color: #2a2a2a;
+ width: calc(100% - 40px);
+ 
+}
+
+/* Нижня частина: соцмережі + копірайт */
+.footer-bottom {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+ padding: 40px 20px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 32px;
+  padding: 0 48px 32px 48px;
+}
+.social-icon{
+  width: 40px;
+  height: 40px;
+ 
+}
+.footer-socials img:hover,
+.footer-socials img:focus {
+  opacity: 0.7;
+}
+
+.footer-copy {
+  color: #c4c4c4;
+  font-size: 16px;
+  text-align: center;
+  padding: 0 1px 16px 1px;
+}
+
+/* ===== Tablet & up ===== */
+@media (min-width: 768px) {
+
+  .footer-top {
+    padding:80px 138px;
+    gap: 24px;
+  }
+  .footer-bottom{
+padding: 32px 32px;
+flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+.footer-logo-icon {
+    width: 116px;
+    height: 45px;
+  }
+  .footer-nav ul {
+    flex-direction: row;
+  }
+  .footer-socials {
+    padding: 0;
+  
+    gap: 24px;
+  }
+  .social-icon{
+    width: 32px;
+    height: 32px;
+  }
+  .footer-copy {
+    padding: 0 0 8px 0px;
+  }
+}
+
+/* ===== Desktop (1440px+) ===== */
+@media (min-width: 1440px) {
+  .footer-top {
+    flex-direction:column;
+    justify-content: center;
+    gap: 32px;
+    padding: 80px 400px;
+  }
+ 
+  .footer-divider {
+    
+    margin: 0 auto;
+   width: calc(100% - 96px);
+  }
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 32px 64px;
+    align-items: center;
+  }
+  
+  .footer-nav ul {
+    flex-direction: row;
+    gap: 32px;
+  }
+  .footer-socials {
+    gap: 24px;
+  }
+  .social-icon{
+    width: 24px;
+    height: 24px;
+  }
+}
