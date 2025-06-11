@@ -8,6 +8,7 @@
   padding: 64px 0;
   /* background: rgba(0, 0, 0, 0.25); */
   background: rgba(255, 255, 255, 0.25);
+  /* background-color: orange; */
   position: fixed;
   top: 0;
   left: 0;
@@ -45,9 +46,6 @@
   position: absolute;
   top: 16px;
   right: 16px;
-}
-
-.icon-close-modal-artist {
 }
 
 .title-modal-artist {
@@ -210,4 +208,75 @@
 
 .icon-track-modal-artist {
   fill: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .modal-artist {
+    width: 702px;
+  }
+  
+  .container-modal-artist {
+    padding: 64px 24px;
+  }
+  
+  .btn-close-modal-artist {
+    right: 47px;
+  }
+
+  .title-modal-artist {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+  
+  .image-modal-artist {
+    width: 654px;
+  }
+  
+  .list-info-modal-artist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  
+  /* Первая строка - Years active и Sex */
+  .item-info-modal-artist:nth-child(1),
+  .item-info-modal-artist:nth-child(2) {
+    flex: 0 0 calc(50% - 12px);
+    min-width: 146px;
+    max-width: 146px;
+    order: 1;
+  }
+  
+  /* Вторая строка - Members и Country */
+  .item-info-modal-artist:nth-child(3),
+  .item-info-modal-artist:nth-child(4) {
+    flex: 0 0 calc(50% - 12px);
+    min-width: 146px;
+    max-width: 146px;
+    order: 2;
+  }
+  
+  /* Третья строка - Biography */
+  .item-info-modal-artist:nth-child(5) {
+    flex: 0 0 100%;
+    width: 100%;
+    order: 3;
+  }
+  
+  .item-info-modal-artist {
+    margin-bottom: 0;
+  }
+  
+  .title-info-modal-artist {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  .text-info-modal-artist {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1440px) {
 }
