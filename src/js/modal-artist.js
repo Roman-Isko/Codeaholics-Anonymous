@@ -118,43 +118,53 @@ function renderArtist({
     .join('');
 
   return `<div class="container-modal-artist">
-    <h2 class="title-modal-artist">${strArtist}</h2>
+  <h2 class="title-modal-artist">${strArtist}</h2>
+  <div class="cont-image-text-modal">
     <img class="image-modal-artist" src="${strArtistThumb}" alt="photo ${strArtist}" />
-    <ul class="list-info-modal-artist">
-      <li class="item-info-modal-artist">
-        <h4 class="title-info-modal-artist">Years active</h4>
-        <p class="text-info-modal-artist">${intFormedYear}–${
+    <div class="info-about-artist">
+      <div class="list-info-modal-artist">
+        <div class="group-info-about-artist">
+          <div class="item-info-modal-artist">
+            <h4 class="title-info-modal-artist">Years active</h4>
+            <p class="text-info-modal-artist">${intFormedYear}–${
     intDiedYear || 'present'
   }</p>
-      </li>
-      <li class="item-info-modal-artist">
-        <h4 class="title-info-modal-artist">Sex</h4>
-        <p class="text-info-modal-artist">${strGender}</p>
-      </li>
-      <li class="item-info-modal-artist">
-        <h4 class="title-info-modal-artist">Members</h4>
-        <p class="text-info-modal-artist">${intMembers}</p>
-      </li>
-      <li class="item-info-modal-artist">
-        <h4 class="title-info-modal-artist">Country</h4>
-        <p>${strCountry}</p>
-      </li>
-      <li class="item-info-modal-artist">
-        <h4>Biography</h4>
-        <input type="checkbox" id="expand-bio" hidden>
-        <p class="text-info-modal-artist expandable-text">${strBiographyEN}</p>
-        <label for="expand-bio" class="expand-btn">▼ Show more</label>
-      </li>
-    </ul>
-    <ul class="list-genres-modal-artist">
-      <li class="item-genres-modal-artist">Alternative</li>
-      <li class="item-genres-modal-artist">Pop</li>
-      <li class="item-genres-modal-artist">Rock</li>
-      <li class="item-genres-modal-artist">Indie</li>
-    </ul>
-    <h3 class="albums-modal-artist">Albums</h3>
+          </div>
+          <div class="item-info-modal-artist">
+            <h4 class="title-info-modal-artist">Sex</h4>
+            <p class="text-info-modal-artist">${strGender}</p>
+          </div>
+        </div>
+        <div class="group-info-about-artist">
+          <div class="item-info-modal-artist">
+            <h4 class="title-info-modal-artist">Members</h4>
+            <p class="text-info-modal-artist">${intMembers}</p>
+          </div>
+          <div class="item-info-modal-artist">
+            <h4 class="title-info-modal-artist">Country</h4>
+            <p>${strCountry}</p>
+          </div>
+        </div>
+        <div class="item-info-modal-artist biography-info-modal-artist">
+          <h4 class="title-info-modal-artist">Biography</h4>
+          <input type="checkbox" id="expand-bio" hidden>
+          <p class="text-info-modal-artist expandable-text">${strBiographyEN}</p>
+          <label for="expand-bio" class="expand-btn">▼ Show more</label>
+        </div>
+      </div>
+      <ul class="list-genres-modal-artist">
+        <li class="item-genres-modal-artist">Alternative</li>
+        <li class="item-genres-modal-artist">Pop</li>
+        <li class="item-genres-modal-artist">Rock</li>
+        <li class="item-genres-modal-artist">Indie</li>
+      </ul>
+    </div>
+  </div>
+  <h3 class="albums-modal-artist">Albums</h3>
+  <div class="conts-albums-modal-artist">
     ${albumsHTML}
-  </div>`;
+  </div>
+</div>`;
 }
 
 function createModalArtist(res) {
