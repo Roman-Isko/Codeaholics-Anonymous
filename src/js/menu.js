@@ -1,20 +1,24 @@
 // alert('menu')
-const menuBtn = document.querySelector('.burger-btn');
+const iconBurger = document.querySelector('.burger-icon');
+const iconBurgerX = document.querySelector('.burger-icon-x');
 const menuList = document.querySelector('.header-nav-list');
 const body = document.body;
 const svgBurger = document.querySelector('.burger-svg');
 
 
 
-menuBtn.addEventListener('click', openMenu);
+iconBurger.addEventListener('click', openMenu);
+iconBurgerX.addEventListener('click', openMenu);
 menuList.addEventListener('click', (evt) => {
     
 
     if(evt.target.nodeName === 'A') {
         
         menuList.classList.remove('active');
-        svgBurger.setAttribute('href', './img/symbol-defs.svg#icon-menu-alt-right');
+        iconBurgerX.classList.remove('active');
+        iconBurger.classList.remove('active');
         body.classList.remove('lock');
+
 
     }
     return;
@@ -24,12 +28,14 @@ menuList.addEventListener('click', (evt) => {
 function openMenu(){
     
     menuList.classList.toggle('active');
+    iconBurger.classList.toggle('active');
+    iconBurgerX.classList.toggle('active');
 
     if(menuList.classList.contains('active')){
-        svgBurger.setAttribute('href', './img/symbol-defs.svg#icon-Icon-x');
+        
         body.classList.add('lock');
     }else{
-        svgBurger.setAttribute('href', './img/symbol-defs.svg#icon-menu-alt-right');
+        
         body.classList.remove('lock');
     }
 
