@@ -9,18 +9,22 @@
       <!-- Карточки будут генерироваться динамически  -->
     </div>
 
+    
+
     <ul class="list-cards">
-      <li class="item-directions-alter">Alternative</li>
-      <li class="item-directions-pop">POP</li>
-      <li class="item-directions-rock">Rock</li>
-      <li class="item-directions-indie">INDIE</li>
+      <ul class="genre-list">
+        <li class="genre-item" data-genre="alternative">Alternative</li>
+        <li class="genre-item" data-genre="pop">POP</li>
+        <li class="genre-item" data-genre="rock">Rock</li>
+        <li class="genre-item" data-genre="indie">INDIE</li>
+        </ul>
     </ul>
 
 
     <div class="reference"></div>
 
    <!-- кнопка для завантаження наступних данних-->
-    <button class="load"><svg class="btn-icon">
+    <button class="load" id="load-more"><svg class="btn-icon">
       <use href="./img/images/symbol-defs.svg#icon-down-arrow-alt"></use>
       </svg>
       <span class="text">Load
