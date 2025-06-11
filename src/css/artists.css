@@ -1,22 +1,16 @@
 /* Styles for Mobile devices */
 .artists-blog {
-   /* display: flex;
-  flex-direction: column;  
-   padding-top: 64px;  */
-  /* max-width: 288px; 
-  height: 4502px;  */
+
   background-color: #060307;
  
 }
 
 .wrapper-title {
-  /* display:flex ;
-  flex-direction: column; */
-  /* max-width: 288px; */
+ 
   height: 199px;
-  padding-bottom: 32px;
-  text-align: center;
+ text-align: center;
   padding-top: 64px;
+  padding-bottom: 32px;
 }
 
 .title-blog {
@@ -50,10 +44,10 @@
   /* центрує кнопки/списки */
   gap: 40px;
   /* проміжок між секціями */
-  margin-top: 40px;
-  margin-bottom: 60px;
+  
+  margin-bottom: 32px;
 }
-.card-grid {
+/* .card-grid {
   border-radius: 16px;
     width: 288px;
     height: 177px;
@@ -62,7 +56,7 @@
     flex-direction: column;
     gap: 16px;
     flex-wrap: wrap;
-}
+} */
 
 .list-cards {
   display: flex;
@@ -71,7 +65,18 @@
     height: 80px;
   padding-bottom: 16px;
 }
-.genre-item{
+
+.genre-list{
+  display: flex;
+    flex-wrap: nowrap;
+    max-width: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    height: 32px;
+    padding-bottom: 16px;
+}
+.artist-genre{
    border: 1px solid rgba(255, 255, 255, 0.2);
    border-radius: 6px;
    font-family: "IBM Plex Sans",
@@ -83,25 +88,25 @@
 
  }
 
-.genre-item[data-genre="alternative"] {
+.artist-genre[data-genre="alternative"] {
   padding: 4px 10px;
     max-width: 103px;
     height: 32px;
 }
 
-.genre-item[data-genre="pop"] {
+.artist-genre[data-genre="pop"] {
   padding: 4px 10px;
     max-width: 49px;
     height: 32px;
 }
 
-.genre-item[data-genre="rock"] {
+.artist-genre[data-genre="rock"] {
   padding: 4px 10px;
     max-width: 57px;
     height: 32px;
 }
 
-.genre-item[data-genre="indie"] {
+.artist-genre[data-genre="indie"] {
   padding: 4px 10px;
     max-width: 60px;
     height: 32px;
@@ -112,8 +117,8 @@
   height: 104px;
   padding-bottom: 24px;
 }
-
-.name {
+/*ім'я виконавця*/
+.artist-name {
   display: block;
   font-family: "Epilogue",
     sans-serif;
@@ -123,7 +128,7 @@
   letter-spacing: -0.01em;
   color: #FFF;
 }
-
+/*текст*/
 .name-reference {
   display: block;
   max-width: 288px;
@@ -141,8 +146,8 @@
   overflow: hidden;
   /* Сховати надлишковий текст */
 }
-
- .btn-learm{
+/*modal-btn*/
+ .btn-learn{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -156,23 +161,21 @@
   font-size: 18px;
   line-height: 150%;
   color: #FFF;
-  background-color: #060307;
+ background-color: #060307; 
   cursor: pointer;
+  border: none;
   margin-bottom: 32px;
-  outline: none;
+  /* outline: none; */
 
 } 
-
+/*іконкі на кнопки*/
 .btn-icon {
   max-width: 24px;
   /* Задайте розмір іконки */
   height: 24px;
   order: 1;
   padding-top: 5px;
-
   fill: currentColor;
-
-
 }
 
 .text {

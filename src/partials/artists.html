@@ -1,34 +1,66 @@
 <section class="artists-blog" id="artists-section">
   <div class="container artists-markup">
+
     <div class="wrapper-title">
       <h1 class="title-blog">Artists</h1>
       <h2 class="subtitle-blog">Explore Your New Favorite Artists</h2>
     </div>
-<div class="content">
-    <div class="card-grid" id="card-grid">
-      <!-- Карточки будут генерироваться динамически  -->
-    </div>
 
+     <div class="content">
+          <div class="list-cards" id="card-grid">
+            <!-- Карточки будут генерироваться динамически  -->
     
 
-    <ul class="list-cards">
-      <ul class="genre-list">
-        <li class="genre-item" data-genre="alternative">Alternative</li>
-        <li class="genre-item" data-genre="pop">POP</li>
-        <li class="genre-item" data-genre="rock">Rock</li>
-        <li class="genre-item" data-genre="indie">INDIE</li>
-        </ul>
-    </ul>
+            <ul class="list-cards">
+              <li class="artist-card" data-genre="alternative">Alternative</li>
+              <li class="artist-card" data-genre="pop">POP</li>
+              <li class="artist-card" data-genre="rock">Rock</li>
+              <li class="artist-card" data-genre="indie">INDIE</li>
+            </ul>
+          </div>
+            <!-- <button class="" id="load-more">
+              <svg class="btn-icon" width="24" height="24">
+                <use href="./img/images/symbol-defs.svg#icon-arrow-caret-right"></use>
+              </svg>
+              <span class="text">Learn</span>   </button> -->
 
 
-    <div class="reference"></div>
-
-   <!-- кнопка для завантаження наступних данних-->
-    <button class="load" id="load-more"><svg class="btn-icon">
-      <use href="./img/images/symbol-defs.svg#icon-down-arrow-alt"></use>
-      </svg>
-      <span class="text">Load
-        More</span></button>
+            <div class="reference"></div>
+    
+          <!-- кнопка для завантаження наступних данних-->
+         <button class="load" id="load-more"><svg class="btn-icon">
+          <use href="./img/images/symbol-defs.svg#icon-down-arrow-alt"></use>
+          </svg>
+          <span class="text">Load
+           More</span></button>
+    </div>
   </div>
+</section>
+
+
+
+
+
+
+
+
+ 
+     
+    
+    </div>
+    <!-- <div class="content"> -->
+      <!-- <div class="card-grid" id="card-grid"> -->
+        <!-- <ul class="list-cards"> -->
+          <!-- <li class="artist-card">...</li> -->
+        </ul>
+      </div>
+      <!-- <div class="reference"></div> -->
+      <button id="load-more" class="load">
+        <svg class="btn-icon">
+          <use href="./img/images/symbol-defs.svg#icon-down-arrow-alt"></use>
+        </svg>
+        <span class="text">Load More</span>
+      </button>
+    </div>
   </div>
 </section>

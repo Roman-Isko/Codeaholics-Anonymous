@@ -1,39 +1,10 @@
-import './js/sound-wave-api.js'
-import './js/render-functions.js'
-import './js/menu.js'
-import './js/modal.js'
-import './js/artists.js'
-
-import './js/feedback.js'
-
-
-
-import { fetchArtists } from './js/api.js';
-import { createArtistCard } from './js/render.js';
-import './css/styles.css';
-
-const artistsList = document.querySelector('.artists-list');
-
-async function loadArtists(page = 1, limit = 12) {
-  try {
-    const data = await fetchArtists(page, limit);
-
-    const { artists } = data;
-
-    if (!Array.isArray(artists)) {
-      throw new Error('Невірна структура даних: artists не є масивом');
-    }
-
-    renderArtists(artists);
-  } catch (error) {
-    console.error('Помилка при завантаженні артистів:', error.message);
-  }
+.genre-list{
+  display: flex;
+    flex-wrap: nowrap;
+    max-width: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    height: 32px;
+    padding-bottom: 16px;
 }
-
-function renderArtists(artists) {
-  artistsList.innerHTML = ''; // очищення перед рендером
-  const markup = artists.map(createArtistCard).join('');
-  artistsList.insertAdjacentHTML('beforeend', markup);
-}
-
-loadArtists();
