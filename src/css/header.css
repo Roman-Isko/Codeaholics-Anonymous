@@ -14,9 +14,9 @@
   align-items: center;
 }
 
-/* .header-logo {
+.header-logo {
   fill: #764191;
-} */
+}
 
 .header-nav-list {
   display: none;
