@@ -9,16 +9,18 @@
   flex-direction: column;
   align-items: center;
   padding: 40px 20px;
-
-
 }
 
 .footer-logo img {
   height: auto;
   opacity: 0.85;
   transition: opacity 0.3s;
+}
+
+.footer-logo-icon {
   fill: #5F25A8;
 }
+
 .footer-logo img:hover,
 .footer-logo img:focus {
   opacity: 1;
