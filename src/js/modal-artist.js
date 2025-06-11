@@ -11,8 +11,8 @@ async function fetchArtistData() {
     // const res = await getArtistByID('65ada69eaf9f6d155db48612');
     // const res = await getArtistByID('65ada54daf9f6d155db47e29');
     // const res = await getArtistByID('65ada5b8af9f6d155db4806b');
-    const res = await getArtistByID('65ada6e9af9f6d155db48765');
-    // const res = await getArtistByID('65adaafaaf9f6d155db4a11b');
+    // const res = await getArtistByID('65ada6e9af9f6d155db48765');
+    const res = await getArtistByID('65adaafaaf9f6d155db4a11b');
     // const res = await getArtistByID('65adaaecaf9f6d155db4a0e5');
 
     console.log(res.data);
@@ -90,7 +90,7 @@ function renderArtist({
             ? `
           <a class="link-track-modal-artist" href="${track.movie}" target="_blank">
             <svg class="icon-track-modal-artist" width="24" height="24">
-              <use href="../img/images/symbol-defs.svg#icon-Youtube"></use>
+              <use href="../img/symbol-defs.svg#icon-Youtube"></use>
             </svg>
           </a>
         `
@@ -120,7 +120,9 @@ function renderArtist({
   return `<div class="container-modal-artist">
   <h2 class="title-modal-artist">${strArtist}</h2>
   <div class="cont-image-text-modal">
-    <img class="image-modal-artist" src="${strArtistThumb}" alt="photo ${strArtist}" />
+    <div class="image-wrapper">
+      <img class="image-modal-artist" src="${strArtistThumb}" alt="photo ${strArtist}" />
+    </div>
     <div class="info-about-artist">
       <div class="list-info-modal-artist">
         <div class="group-info-about-artist">

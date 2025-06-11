@@ -81,7 +81,7 @@
 }
 
 .expandable-text {
-  max-height: 240px;
+  max-height: 245px;
   overflow: hidden;
   transition: max-height 0.3s;
 }
@@ -217,7 +217,7 @@
   }
 
   .image-modal-artist {
-    width: 576px;
+    width: 654px;
   }
 
   .btn-close-modal-artist {
@@ -271,63 +271,35 @@
     padding: 64px;
   }
 
+  .btn-close-modal-artist {
+    top: 25px;
+    right: 25px;
+  }
+
   .modal-artist {
     width: 1312px;
   }
   
   .cont-image-text-modal {
     display: flex;
+    align-items: center;
     gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .image-wrapper {
+    border-radius: 16px;
   }
 
   .image-modal-artist {
     width: 576px;
+    object-fit: contain;
+    
   }
 
   .info-about-artist {
     width: 576px;
   }
-
-
-  /* 
-
-  .btn-close-modal-artist {
-    right: 47px;
-  }
-
-  .title-modal-artist {
-    font-size: 32px;
-    margin-bottom: 48px;
-  }
-
-  .image-modal-artist {
-    width: 654px;
-  }
-
-  .group-info-about-artist {
-    display: flex;
-    gap: 24px;
-    margin-bottom: 24px;
-  }
-
-  .item-info-modal-artist {
-    min-width: 146px;
-    margin-bottom: 0;
-  }
-
-  .biography-info-modal-artist {
-    margin-bottom: 24px;
-  }
-
-  .list-genres-modal-artist {
-    margin-bottom: 48px;
-  }
-
-  .conts-albums-modal-artist {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-  } */
 
   .cont-albums-modal-artist {
     flex-basis: calc((100% - 32px * 3) / 4);
