@@ -1,16 +1,18 @@
-/* Styles for Mobile devices */
 .artists-blog {
-
   background-color: #060307;
- 
+  /* Центрування контенту */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Мінімальна висота, щоб зайняти екран або секцію */
+  min-height: 100vh;
 }
 
 .wrapper-title {
- 
-  height: 199px;
- text-align: center;
-  padding-top: 64px;
-  padding-bottom: 32px;
+
+  text-align: center;
+
 }
 
 .title-blog {
@@ -21,7 +23,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  color: #FFF;
+  /* color: #FFF; */
 }
 
 .subtitle-blog {
@@ -29,7 +31,7 @@
   height: 159px;
   font-family: "Epilogue",
     sans-serif;
-    text-align:left;
+  text-align: left;
   font-weight: 700;
   font-size: 44px;
   line-height: 120%;
@@ -44,72 +46,126 @@
   /* центрує кнопки/списки */
   gap: 40px;
   /* проміжок між секціями */
-  
+  background-color: transparent;
   margin-bottom: 32px;
 }
-/* .card-grid {
-  border-radius: 16px;
-    width: 288px;
-    height: 177px;
-    margin-bottom: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    flex-wrap: wrap;
-} */
+
 
 .list-cards {
   display: flex;
+  /* flex-direction: column; */
+  gap: 24px;
+  /* max-width: 800px; */
+  margin: 0 auto;
+  list-style: none;
+  /* padding: 0;
+ display: flex; */
   flex-wrap: wrap;
-  gap: 16px;
-    height: 80px;
-  padding-bottom: 16px;
+
+  justify-content: center;
 }
 
-.genre-list{
+.list {
   display: flex;
-    flex-wrap: nowrap;
-    max-width: 640px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    height: 32px;
-    padding-bottom: 16px;
-}
-.artist-genre{
-   border: 1px solid rgba(255, 255, 255, 0.2);
-   border-radius: 6px;
-   font-family: "IBM Plex Sans",
-     sans-serif;
-   font-weight: 600;
-   font-size: 16px;
-   line-height: 150%;
-   color: #FFF;
+  list-style: none;
+  align-items: left;
+  padding: 0;
+  margin: 0;
 
- }
+}
+
+/*фото артиста*/
+.artist-card {
+  /* background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  text-align: center; */
+
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 288px;
+  min-height: 100%;
+  flex: 1 1 100%;
+  /* 1 колонка на мобілці */
+
+}
+
+.artist-image {
+  /* border-radius: 16px;
+   width: 288px;
+   height: 177px; */
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-color: transparent;
+}
+
+.artist-genre {
+
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #181616;
+}
 
 .artist-genre[data-genre="alternative"] {
   padding: 4px 10px;
-    max-width: 103px;
-    height: 32px;
+  max-width: 103px;
+  height: 32px;
 }
 
 .artist-genre[data-genre="pop"] {
   padding: 4px 10px;
-    max-width: 49px;
-    height: 32px;
+  max-width: 49px;
+  height: 32px;
 }
 
 .artist-genre[data-genre="rock"] {
   padding: 4px 10px;
-    max-width: 57px;
-    height: 32px;
+  max-width: 57px;
+  height: 32px;
 }
 
 .artist-genre[data-genre="indie"] {
   padding: 4px 10px;
-    max-width: 60px;
-    height: 32px;
+  max-width: 60px;
+  height: 32px;
+}
+
+.learn-more-btn {
+  width: 125px;
+  height: 27px;
+  background-color: #764191;
+  /* колір можна змінити */
+  color: #fff;
+  /* колір тексту */
+  border: none;
+  border-radius: 6px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  /* щоб точно по висоті */
+  user-select: none;
+  transition: background-color 0.3s ease;
 }
 
 .reference {
@@ -117,77 +173,25 @@
   height: 104px;
   padding-bottom: 24px;
 }
-/*ім'я виконавця*/
-.artist-name {
-  display: block;
-  font-family: "Epilogue",
-    sans-serif;
+
+
+
+
+.artist-bio {
+  display: -webkit-box;
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   font-weight: 700;
   font-size: 32px;
   line-height: 130%;
   letter-spacing: -0.01em;
-  color: #FFF;
-}
-/*текст*/
-.name-reference {
-  display: block;
-  max-width: 288px;
-  font-family: "Epilogue",
-    sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 150%;
-  color: #FFF;
-  text-overflow: ellipsis;
-  /* Додає "..." до обрізаного тексту */
-  white-space: nowrap;
-  /* Текст в один рядок */
-
-  overflow: hidden;
-  /* Сховати надлишковий текст */
-}
-/*modal-btn*/
- .btn-learn{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2px;
-  justify-content: center;
-  max-width: 125px;
-  height: 27px;
-  font-family: "Epilogue", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 150%;
-  color: #FFF;
- background-color: #060307; 
-  cursor: pointer;
-  border: none;
-  margin-bottom: 32px;
-  /* outline: none; */
-
-} 
-/*іконкі на кнопки*/
-.btn-icon {
-  max-width: 24px;
-  /* Задайте розмір іконки */
-  height: 24px;
-  order: 1;
-  padding-top: 5px;
-  fill: currentColor;
-}
-
-.text {
-  display: inline-block;
-  /* Текст у блоці для багаторядкового вирівнювання */
-  text-align: center;
-  /* Центрування тексту */
-  padding-right: 5px;
 }
 
 .load {
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -207,125 +211,59 @@
   color: #FFF;
   cursor: pointer;
   margin-bottom: 64px;
+
 }
 
-/* Styles for Tablet devices */
+.btn-icon {
+  max-width: 24px;
+  /* Задайте розмір іконки */
+  height: 24px;
+  order: 1;
+  padding-top: 5px;
+  fill: currentColor;
+}
+
+.text {
+  display: inline-block;
+  /* Текст у блоці для багаторядкового вирівнювання */
+  text-align: center;
+  /* Центрування тексту */
+  padding-right: 5px;
+}
+
 @media only screen and (min-width: 768px) {
   .container {
     max-width: 768px;
     padding: 0 32px;
   }
-    .wrapper-title {
-      max-width: 704px;
-      height: 146px;
-      text-align: center;
-  
-    }
-  
-    .subtitle-blog {
-      max-width: 704px;
-      height: 146px;
-  
-    }
-  
-    .card-grid {
-      max-width: 704px;
-      height: 432px;
-      flex-direction: column;
-    }
-  
-    .list-cards {
-      display: flex;
-      flex-wrap: nowrap;
-      max-width: 704px;
-  
-    }
-  
-    .reference {
-      max-width: 704px;
-      height: auto;
-      padding-bottom: 24px;
-    }
-  
-    .load {
-      max-width: 340px;
-      width: 100%;
-      height: 47px;
-  
-    }
+
+  .list-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* 1 колонка за замовчуванням */
+    gap: 24px;
+    max-width: 640px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+  }
 }
 
-
-/* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
     padding: 0 64px;
   }
-    .wrapper-title {
-      max-width: 863px;
-      height: 184px;
-      text-align: left;
-  
-    }
-  
-    .subtitle-blog {
-      max-width: 863px;
-      height: 144px;
-      text-align: left;
-      font-size: 60px;
-      line-height: 120%;
-      letter-spacing: -0.01em;
-      color: #FFF;
-      padding-right: 100px;
-    }
-  
-    .card-grid {
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 24px;
-      max-width: 640px;
-      height: 393px;
-    }
-  
-    .card-grid>* {
-      flex: 0 1 calc(50% - 12px);
-      /* 2 колонки */
-      max-width: calc(50% - 12px);
-    }
-  
-    .card-grid>*:nth-child(n + 9) {
-      display: none;
-      /* приховати все після 8-ої картки */
-    }
-  
-    .list-cards {
-      display: flex;
-      flex-wrap: nowrap;
-      max-width: 640px;
-      height: 32px;
-      padding-bottom: 16px;
-    }
-  
-    .reference {
-      max-width: 640px;
-      height: auto;
-      padding-bottom: 24px;
-    }
-  
-    .load {
-      max-width: 170px;
-      width: 100%;
-      height: 47px;
-      margin-bottom: 64px;
-    }
+
+  .list-cards {
+    grid-template-columns: repeat(2, 1fr);
+
+    justify-content: space-between;
+  }
+
+  .artist-card {
+    flex: 1 1 calc(50% - 12px);
+    /* 2 колонки з урахуванням gap */
+  }
+
 }
-
-
-
-
-
-
-
-
-
