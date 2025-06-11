@@ -17,6 +17,7 @@
   height: auto;
   opacity: 0.85;
   transition: opacity 0.3s;
+  fill: #5F25A8;
 }
 .footer-logo img:hover,
 .footer-logo img:focus {
@@ -99,6 +100,7 @@ flex-direction:row;
 .footer-logo-icon {
     width: 116px;
     height: 45px;
+    fill: #5F25A8;
   }
   .footer-nav ul {
     flex-direction: row;
