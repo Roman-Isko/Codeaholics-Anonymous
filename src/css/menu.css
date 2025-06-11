@@ -1,0 +1,64 @@
+html{
+    scroll-behavior: smooth;
+}
+
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+
+@media(max-width: 768px){
+
+    body.lock{
+        overflow: hidden;
+    }
+    
+
+    .header-nav-list{
+        display: block;
+        position: fixed;
+        overflow: auto;
+       
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 39px 0;
+        transform: translateY(-1000px);
+        transition: all 0.3s;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .header-nav-list.active{
+        transform: translateY(0);
+
+
+    }
+
+    .header-nav-link:hover,
+     .header-nav-link:focus {
+        color: #764191;
+    }
+
+    .header-nav-link{
+        display: block;
+        padding: 32px 0;
+        line-height: 1.5;
+        font-size: 26px;
+    }
+
+    .burger-icon{
+        position: relative;
+        
+    }
+
+    
+    .burger-svg{
+        /* z-index: 1001; */
+        position: relative;
+        
+    }
+
+
+}
