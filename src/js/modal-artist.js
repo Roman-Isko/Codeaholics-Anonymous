@@ -1,9 +1,12 @@
-import { getArtistByID } from './sound-wave-api.js';
+import { getArtistByID, getGenresByID } from './sound-wave-api.js';
 
-const loader = document.querySelector('.show-loader');
-const btnCloseModalArtist = document.querySelector('.btn-close-modal-artist');
-const modalArtist = document.querySelector('.modal-artist');
-const modalOverlayArtist = document.querySelector('.modal-overlay-artist');
+export const refs = {
+  loader: document.querySelector('.show-loader'),
+  btnCloseModalArtist: document.querySelector('.btn-close-modal-artist'),
+  modalArtist: document.querySelector('.modal-artist'),
+  modalOverlayArtist: document.querySelector('.modal-overlay-artist'),
+  elemListCards: document.querySelector('.list-cards'),
+};
 
 async function fetchArtistData() {
   try {
@@ -12,8 +15,11 @@ async function fetchArtistData() {
     // const res = await getArtistByID('65ada54daf9f6d155db47e29');
     // const res = await getArtistByID('65ada5b8af9f6d155db4806b');
     // const res = await getArtistByID('65ada6e9af9f6d155db48765');
-    const res = await getArtistByID('65adaafaaf9f6d155db4a11b');
-    // const res = await getArtistByID('65adaaecaf9f6d155db4a0e5');
+    // const res = await getArtistByID('65adaafaaf9f6d155db4a11b');
+    const res = await getArtistByID('65adaaecaf9f6d155db4a0e5');
+    // const albums = await getGenresByID('65adaafaaf9f6d155db4a11b');
+    // console.log(albums);
+    
 
     console.log(res.data);
     createModalArtist(res);
@@ -28,25 +34,34 @@ fetchArtistData();
 setupModalClose();
 
 function setupModalClose() {
-  btnCloseModalArtist.addEventListener('click', closeModal);
+  refs.btnCloseModalArtist.addEventListener('click', closeModal);
+  refs.modalOverlayArtist.addEventListener('click', onOverlayClick);
+  document.addEventListener('keydown', onEscPress);
+}
 
-  modalOverlayArtist.addEventListener('click', e => {
-    if (e.target === modalOverlayArtist) {
-      closeModal();
-    }
-  });
+function removeModalCloseListeners() {
+  refs.btnCloseModalArtist.removeEventListener('click', closeModal);
+  refs.modalOverlayArtist.removeEventListener('click', onOverlayClick);
+  document.removeEventListener('keydown', onEscPress);
+}
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      closeModal();
-    }
-  });
+function onOverlayClick(e) {
+  if (e.target === refs.modalOverlayArtist) {
+    closeModal();
+  }
+}
+
+function onEscPress(e) {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
 }
 
 function closeModal() {
-  modalOverlayArtist.classList.remove('is-open-modal-artist');
+  refs.modalOverlayArtist.classList.remove('is-open-modal-artist');
   document.body.classList.remove('body-no-scroll');
-  modalArtist.querySelector('.container-modal-artist')?.remove();
+  refs.modalArtist.querySelector('.container-modal-artist')?.remove();
+  removeModalCloseListeners();
 }
 
 function renderArtist({
@@ -59,6 +74,7 @@ function renderArtist({
   strCountry,
   strBiographyEN,
   tracksList,
+  genres,
 }) {
   const formatDuration = milliseconds => {
     const totalSeconds = Math.floor(milliseconds / 1000);
@@ -75,30 +91,45 @@ function renderArtist({
     albums[track.strAlbum].push(track);
   });
 
+  const formatActiveYears = (formedYear, diedYear) => {
+    if (!formedYear && !diedYear) {
+      return 'information missing';
+    }
+    if (!diedYear) {
+      return `${formedYear}–present`;
+    }
+    return `${formedYear}–${diedYear}`;
+  };
+
   const albumsHTML = Object.entries(albums)
     .map(([albumName, tracks]) => {
       const tracksHTML = tracks
-        .map(
-          track => `
-      <li class="item-track-modal-artist">
-        <p class="name-track-modal-artist">${track.strTrack}</p>
-        <p class="time-track-modal-artist">${formatDuration(
-          track.intDuration
-        )}</p>
-        ${
-          track.movie
-            ? `
-          <a class="link-track-modal-artist" href="${track.movie}" target="_blank">
-            <svg class="icon-track-modal-artist" width="24" height="24">
-              <use href="../img/symbol-defs.svg#icon-Youtube"></use>
-            </svg>
-          </a>
-        `
-            : '<div class="link-track-modal-artist"></div>'
-        }
-      </li>
-    `
-        )
+        .map(track => {
+          let movieUrl = track.movie;
+          if (movieUrl && !movieUrl.startsWith('http')) {
+            movieUrl = `https://${movieUrl.replace(/^\/\//, '')}`;
+          }
+
+          return `
+          <li class="item-track-modal-artist">
+            <p class="name-track-modal-artist">${track.strTrack}</p>
+            <p class="time-track-modal-artist">${formatDuration(
+              track.intDuration
+            )}</p>
+            ${
+              movieUrl
+                ? `
+                  <a class="link-track-modal-artist" href="${movieUrl}" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon-track-modal-artist" width="24" height="24">
+                      <use href="../img/symbol-defs.svg#icon-Youtube"></use>
+                    </svg>
+                  </a>
+                `
+                : '<div class="link-track-modal-artist"></div>'
+            }
+          </li>
+        `;
+        })
         .join('');
 
       return `
@@ -128,9 +159,10 @@ function renderArtist({
         <div class="group-info-about-artist">
           <div class="item-info-modal-artist">
             <h4 class="title-info-modal-artist">Years active</h4>
-            <p class="text-info-modal-artist">${intFormedYear}–${
-    intDiedYear || 'present'
-  }</p>
+            <p class="text-info-modal-artist">${formatActiveYears(
+              intFormedYear,
+              intDiedYear
+            )}</p>
           </div>
           <div class="item-info-modal-artist">
             <h4 class="title-info-modal-artist">Sex</h4>
@@ -155,10 +187,11 @@ function renderArtist({
         </div>
       </div>
       <ul class="list-genres-modal-artist">
-        <li class="item-genres-modal-artist">Alternative</li>
-        <li class="item-genres-modal-artist">Pop</li>
-        <li class="item-genres-modal-artist">Rock</li>
-        <li class="item-genres-modal-artist">Indie</li>
+        ${genres
+          .map(genre => {
+            return `<li class="item-genres-modal-artist">${genre}</li>`;
+          })
+          .join('')}
       </ul>
     </div>
   </div>
@@ -171,15 +204,23 @@ function renderArtist({
 
 function createModalArtist(res) {
   const markup = renderArtist(res.data);
-  modalArtist.insertAdjacentHTML('beforeend', markup);
+  refs.modalArtist.insertAdjacentHTML('beforeend', markup);
 }
 
 function showLoader() {
-  modalOverlayArtist.classList.add('is-open-modal-artist');
+  refs.modalOverlayArtist.classList.add('is-open-modal-artist');
   document.body.classList.add('body-no-scroll');
-  loader.classList.add('loader');
+  refs.loader.classList.add('loader');
 }
 
 function hideLoader() {
-  loader.classList.remove('loader');
+  refs.loader.classList.remove('loader');
+}
+
+// elemListCards.addEventListener('click', openModalArtist)
+
+async function openModalArtist(event) {
+  event.preventDefault();
+  const idArtist = event.target.dataset;
+  console.log(idArtist);
 }

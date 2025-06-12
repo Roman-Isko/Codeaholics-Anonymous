@@ -8,7 +8,7 @@
   padding: 64px 0;
   /* background: rgba(0, 0, 0, 0.25); */
   background: rgba(255, 255, 255, 0.25);
-  /* backццground-color: orange; */
+  /* background-color: orange; */
   position: fixed;
   top: 0;
   left: 0;
@@ -32,7 +32,27 @@
   overflow-y: auto;
   border-radius: 16px;
   background-color: #060307;
+
+    overflow-y: overlay;
 }
+
+.modal-artist::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-artist::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-artist::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.modal-artist::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 
 .container-modal-artist {
   padding: 52px 8px;
