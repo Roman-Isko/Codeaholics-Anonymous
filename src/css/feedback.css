@@ -1,0 +1,179 @@
+@import 'css-star-rating/css/star-rating.min.css';
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    display: none !important;
+}
+
+.feedback {
+    background-color: #060307;
+    padding-right: 16px;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+
+}
+
+.feedback-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    padding-right: 16px;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 32px; */
+}
+
+.swiper {
+    
+    margin: 0 auto;
+    position: relative;
+
+}
+
+
+
+/* ============================stars============================ */
+
+.feedback-rating-display {
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    font-size: 22px;
+    border: none;
+
+
+
+}
+
+.empty {
+    color: white;
+
+}
+
+.filled {
+    color: #764191;
+}
+
+.star-icon.empty {
+    color: white;
+    text-shadow: 0 0 2px #999;
+
+}
+
+/* =====================card========================== */
+
+.feedback-text {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #fff;
+    margin-top: 32px;
+}
+
+.feedback-author {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+/* ============================pagination================================== */
+.swiper-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    z-index: 9999;
+    position: absolute;
+    bottom: 200px;
+    width: 100%;
+}
+
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: gray;
+
+}
+
+.dot.active {
+    background-color: white;
+}
+.custom-swiper-btn {
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    z-index: 10;
+    border-radius: 8px;
+    display: none !important;
+    padding-right: 25px;
+    padding-bottom: 5px;
+}
+
+
+.custom-swiper-btn .icon {
+    width: 50px;
+    height: 50px;
+    fill: white;
+}
+
+@media (min-width: 768px) {
+    .feedback-section {
+    padding-right: 32px;
+     padding-left: 32px;   }
+    .feedback {
+        padding-right: 93px;
+        padding-left: 93px;
+       /* max-width: 704px; */
+       padding-top: 64px;
+
+    }
+
+    .icon.icon-arrow-right {
+        color: #764191;
+        background-color: #fff;
+    }
+
+    .custom-swiper-btn,
+    .swiper-button-prev {
+        display: block !important;
+
+    }
+
+    .feedback-text {
+        font-size: 26px;
+    }
+
+    .swiper-pagination {
+        bottom:  150px;
+    }
+}
+
+@media (min-width: 1440px) {
+   .feedback-section {
+    padding-right: 64px;
+    padding-left: 64px;
+   }
+
+
+    .feedback-text {
+        font-size: 32px;
+        padding-bottom: 16px;
+    }
+
+    .swiper-pagination {
+        bottom: 150px;
+    }
+}
