@@ -8,10 +8,15 @@ body::-webkit-scrollbar{
 }
 
 
-@media(max-width: 768px){
+@media(max-width: 767px){
 
     body.lock{
         overflow: hidden;
+    }
+
+    .header-logo-link{
+        z-index: 1001;
+        position: relative;
     }
     
 
@@ -32,6 +37,7 @@ body::-webkit-scrollbar{
     
     .header-nav-list.active{
         transform: translateY(0);
+        background-color: black;
 
 
     }
@@ -49,14 +55,28 @@ body::-webkit-scrollbar{
     }
 
     .burger-icon{
+        display: block;
         position: relative;
         
+    }
+    .burger-icon.active{
+        display: none;
+    }
+
+
+    .burger-icon-x{
+        position: relative;
+        display: none;
+    }
+    .burger-icon-x.active{
+        display: block;
     }
 
     
     .burger-svg{
-        /* z-index: 1001; */
+        
         position: relative;
+        
         
     }
 
