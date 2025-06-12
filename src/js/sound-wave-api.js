@@ -27,4 +27,3 @@ export async function getFeedbacks() {
     throw error;
   }
 }
-
