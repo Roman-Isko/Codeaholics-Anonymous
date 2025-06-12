@@ -116,14 +116,14 @@
   }
   .hero-button {
 
-    width: auto;
+    width: 246px;
 
-    padding-left: 44px;
+    /* padding-left: 44px; */
     margin-bottom: 0;
   }
-  .hero-icon {
+  /* .hero-icon {
     padding-right: 44px;
-  }
+  } */
   .hero-img {
     background-image: url('/img/tab-1х.jpg');
   }
@@ -148,7 +148,7 @@
 
   .hero-context {
     width: 50%;
-    margin-right: 31px;
+    /* margin-right: 31px; */
     margin-top: auto;
     margin-bottom: auto;
   }
