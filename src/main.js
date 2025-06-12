@@ -1,4 +1,3 @@
-
 import './js/sound-wave-api.js'
 import './js/render-functions.js'
 import './js/menu.js'
@@ -8,6 +7,7 @@ import './js/feedback.js'
 
 import { fetchArtists } from './js/artists.js';
 import { createArtistCard } from './js/artists.js';
+import { refs, fetchArtistData } from './js/modal.js';
 
 
 
@@ -65,3 +65,14 @@ document.addEventListener('click', event => {
 
 loadArtists();
 
+refs.elemListCards.addEventListener('click', openModalArtist);
+
+async function openModalArtist(event) {
+  const target = event.target;
+  if (!target.closest('[data-id]')) return;
+
+  const { id } = target.closest('[data-id]').dataset;
+  if (!id) return;
+
+  await fetchArtistData(id);
+}
