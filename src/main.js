@@ -1,5 +1,15 @@
+
 import { fetchArtists } from './js/artists.js';
 import { createArtistCard } from './js/artists.js';
+
+import './js/sound-wave-api.js'
+import './js/render-functions.js'
+import './js/menu.js'
+import './js/modal.js'
+import './js/artists.js'
+import './js/feedback.js'
+
+
 
 const artistsList = document.querySelector('.list-cards');
 const loadMoreBtn = document.getElementById('load-more');
