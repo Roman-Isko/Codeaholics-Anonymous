@@ -14,10 +14,9 @@
   max-width: 288px;
   width: 100%;
   padding-bottom: 32px;
-
-  /* text-align: center; */
-
 }
+
+
 
 .title-blog {
   max-width: 50px;
@@ -88,7 +87,7 @@
   padding: 16px;
   text-align: center; */
 
-  background: #fff;
+  background: #060307;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 16px;
@@ -112,59 +111,55 @@
   height: auto;
   object-fit: cover;
   background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* Центруємо все по горизонталі */
-  justify-content: center;
-  /* Вертикальне центрування, якщо треба */
-  width: 100%;
+  display: block;
   /* Максимум по ширині контейнера */
   max-width: 320px;
-  /* Щоб не було ширше, ніж екран */
-  height: auto;
-  /* Зберігає пропорції */
-  object-fit: cover;
-  /* Обрізка, якщо зображення не відповідає співвідношенню сторін */
+
+
+
   margin: 0 auto;
   /* Центруємо картку в списку */
-  padding: 12px;
-  /* Можна підкоригувати відступи */
+
   box-sizing: border-box;
 
 }
 
 .artist-genre {
-
+  display: flex;
+  /* розташування в рядок */
+  gap: 16px;
+  flex-wrap: wrap;
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  color: #060307
+  color: #dcd0e0;
+
 }
 
-.artist-genre[data-genre="alternative"] {
-  padding: 4px 10px;
-  max-width: 103px;
-  height: 32px;
+.genre {
+  display: flex;
+  flex-wrap: wrap;
+  /* Дозволяє перенос елементів на новий рядок */
+  gap: 16px;
+  /* Відстань між елементами */
+  max-width: 600px;
+  /* Ширина контейнера */
+  margin: 0 auto;
+  /* Центрування контейнера */
+  justify-content: center;
+  /* Центрування елементів */
+  list-style: none;
 }
 
-.artist-genre[data-genre="pop"] {
-  padding: 4px 10px;
-  max-width: 49px;
-  height: 32px;
+.artist-genre::after {
+  content: '';
+  /* Прибираємо додаткову кому */
 }
 
-.artist-genre[data-genre="rock"] {
-  padding: 4px 10px;
-  max-width: 57px;
-  height: 32px;
-}
 
-.artist-genre[data-genre="indie"] {
-  padding: 4px 10px;
-  max-width: 60px;
-  height: 32px;
+.artist-name {
+  color: #FFF;
 }
 
 /* Контейнер кожного елемента */
@@ -178,7 +173,8 @@
   align-items: center;
   /* Вирівнюємо по центру */
   text-align: center;
-  
+
+
 }
 
 /* Зображення */
@@ -225,7 +221,7 @@
 
 .artist-bio {
   display: -webkit-box;
-  color: #555;
+  color: #FFF;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -237,6 +233,40 @@
   line-height: 130%;
   letter-spacing: -0.01em;
 }
+
+.lea {
+  background-color: #060307;
+  outline: none;
+  font-family: 'Arial', sans-serif;
+  /* Шрифт */
+  font-size: 16px;
+  /* Розмір тексту */
+  font-weight: 600;
+  /* Жирність */
+  color: #ffffff;
+  /* Колір тексту */
+  text-transform: uppercase;
+  /* Всі літери великі */
+  letter-spacing: 1px;
+  /* Інтервал між літерами */
+  text-align: center;
+  /* Вирівнювання тексту по центру */
+  padding: 10px 20px;
+  border: none;
+}
+
+.lea::before {
+  content: "";
+  position: absolute;
+  left: 450px;
+  width: 16px;
+  height: 16px;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 
 .load {
   display: inline-flex;
@@ -281,14 +311,20 @@
 @media only screen and (min-width: 768px) {
   .container {
     max-width: 768px;
-    padding: 0 32px;}
+    padding: 0 32px;
+
+  }
+
   .content {
     display: block;
     /* Повертаємо стандартний потік розташування */
     flex-direction: unset;
     /* Відміняємо flex-напрямок */
     text-align: center;
-    /* Центруємо текст */ }
+    /* Центруємо текст */
+
+  }
+
   .list-cards {
     display: grid;
     grid-template-columns: 1fr;
@@ -314,51 +350,54 @@
 
   .artist-image {
 
-    width: 100%;}
-
-
-    .subtitle-blog {
-      max-width: 704px;
-      height: 106px;
-      margin: 0 auto;
-
-    }
-
-    .wrapper-title {
-      box-sizing: border-box;
-      width: 100%;
-      max-width: 740px;
-      height: 108px;  }
+    width: 100%;
   }
 
-  @media only screen and (min-width: 1440px) {
-    .container {
-      max-width: 1440px;
-      padding: 0 64px;
-    }
 
-    .list-cards {
-      grid-template-columns: repeat(2, 1fr);
-
-      justify-content: space-between;
-    }
-
-    .artist-card {
-      flex: 1 1 calc(50% - 12px);
-      /* 2 колонки з урахуванням gap */
-    }
-
-    .wrapper-title {
-      box-sizing: border-box;
-      width: 100%;
-      max-width: 863px;
-      padding-bottom: 32px;
-
-    }
-
-    .subtitle-blog {
-      max-width: 523px;
-      height: 144px;
-    }
+  .subtitle-blog {
+    max-width: 704px;
+    height: 106px;
+    margin: 0 auto;
 
   }
+
+  .wrapper-title {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 740px;
+    height: 108px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 64px;
+  }
+
+  .list-cards {
+    grid-template-columns: repeat(2, 1fr);
+
+    justify-content: space-between;
+  }
+
+  .artist-card {
+    flex: 1 1 calc(50% - 12px);
+    /* 2 колонки з урахуванням gap */
+  }
+
+  .wrapper-title {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 863px;
+    padding-bottom: 32px;
+
+    /* text-align: center; */
+  }
+
+  .subtitle-blog {
+    max-width: 523px;
+    height: 144px;
+  }
+
+}
