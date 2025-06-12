@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 
 export async function fetchArtists(page = 1, limit = 8) {
@@ -41,3 +42,4 @@ export function createArtistCard(artist) {
         </li>
     `;
 }
+
