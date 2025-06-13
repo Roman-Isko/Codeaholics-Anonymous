@@ -16,6 +16,7 @@
   padding-bottom: 32px;
 }
 
+
 .title-blog {
   max-width: 50px;
   padding-left: 24px;
@@ -26,6 +27,7 @@
   line-height: 150%;
   color: #FFF;
 }
+
 
 .subtitle-blog {
   padding-left: 24px;
@@ -155,9 +157,7 @@
 
 /* Контейнер кожного елемента */
 .card-grid {
-  flex: 1 1 calc(33.333% - 16px);
-  /* Адаптивна ширина: третина від рядка */
-  max-width: calc(33.333% - 16px);
+ 
   display: flex;
   flex-direction: column;
   /* Елементи в стовпчик */
