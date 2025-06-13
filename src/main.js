@@ -1,4 +1,4 @@
-import 'normalize.css';
+// import 'normalize.css';
 import './js/sound-wave-api.js'
 import './js/menu.js'
 import './js/feedback.js'
