@@ -1,8 +1,4 @@
 
-// import Swiper from 'swiper/bundle';
-// import 'swiper/css/bundle';
-
-
 import 'css-star-rating/css/star-rating.min.css';
 import Swiper from 'swiper';
 import 'swiper/css';
