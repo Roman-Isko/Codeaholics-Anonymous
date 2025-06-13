@@ -94,8 +94,8 @@
   z-index: 10;
   border-radius: 8px;
   display: none !important;
-  padding-right: 25px;
-  padding-bottom: 5px;
+  padding-right: 50px;
+  padding-bottom: 50px;
 }
 
 .custom-swiper-btn-prev .icon {
