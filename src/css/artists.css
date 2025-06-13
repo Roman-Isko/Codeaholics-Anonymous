@@ -7,382 +7,436 @@
   min-height: 100vh;
   box-sizing: border-box;
   max-width: 100%;
-}
 
-.wrapper-title {
-  box-sizing: border-box;
-  max-width: 288px;
-  width: 100%;
-  padding-bottom: 32px;
-}
-
-
-
-.title-blog {
-  max-width: 50px;
-  padding-left: 24px;
-  height: 24px;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 150%;
-  color: #FFF;
-}
-
-
-.subtitle-blog {
-  padding-left: 24px;
-  max-width: 288px;
-  height: 159px;
-  font-family: "Epilogue",
-    sans-serif;
-  text-align: left;
-  font-weight: 700;
-  font-size: 44px;
-  line-height: 120%;
-  letter-spacing: -0.01em;
-  color: #FFF;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* центрує кнопки/списки */
-  gap: 40px;
-  /* проміжок між секціями */
-  background-color: transparent;
-  margin-bottom: 32px;
-  margin-top: 32px;
-}
-
-
-.list-cards {
-  display: flex;
-  /* flex-direction: column; */
-  gap: 24px;
-  /* max-width: 800px; */
-  margin: 0 auto;
-  list-style: none;
-  /* padding: 0;
- display: flex; */
-  flex-wrap: wrap;
-
-  justify-content: center;
-}
-
-.list-cards {
-  display: flex;
-  list-style: none;
-  align-items: flex-start;
-  padding: 0;
-  margin: 0;
-
-}
-
-/*фото артиста*/
-.artist-card {
-  /* background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  text-align: center; */
-
-  background: #060307;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  text-align: center;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  width: 100%;
-  max-width: 288px;
-  min-height: 100%;
-  flex: 1 1 100%;
-  /* 1 колонка на мобілці */
-
-}
-
-.artist-image {
-
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  background-color: transparent;
-  display: block;
-  /* Максимум по ширині контейнера */
-  max-width: 320px;
-
-
-
-  margin: 0 auto;
-  /* Центруємо картку в списку */
-
-  box-sizing: border-box;
-
-}
-
-.artist-genre {
-  display: flex;
-  /* розташування в рядок */
-  gap: 16px;
-  flex-wrap: wrap;
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 150%;
-  color: #dcd0e0;
-
-}
-
-.genre {
-  display: flex;
-  flex-wrap: wrap;
-  /* Дозволяє перенос елементів на новий рядок */
-  gap: 16px;
-  /* Відстань між елементами */
-  max-width: 600px;
-  /* Ширина контейнера */
-  margin: 0 auto;
-  /* Центрування контейнера */
-  justify-content: center;
-  /* Центрування елементів */
-  list-style: none;
-}
-
-.artist-genre::after {
-  content: '';
-  /* Прибираємо додаткову кому */
-}
-
-
-.artist-name {
-  color: #FFF;
-}
-
-/* Контейнер кожного елемента */
-.card-grid {
- 
-  display: flex;
-  flex-direction: column;
-  /* Елементи в стовпчик */
-  align-items: center;
-  /* Вирівнюємо по центру */
-  text-align: center;
-
-
-}
-
-/* Зображення */
-.card-grid img {
-  width: 100%;
-  /* Займає всю ширину контейнера */
-  height: auto;
-  /* Зберігає пропорції */
-
-}
-
-.learn-more-btn {
-  width: 125px;
-  height: 27px;
-  background-color: #110219;
-  /* колір можна змінити */
-  color: #fff;
-  /* колір тексту */
-  border: none;
-  border-radius: 6px;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.5;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0;
-  /* щоб точно по висоті */
-  user-select: none;
-  transition: background-color 0.3s ease;
-}
-
-.reference {
-  max-width: 288px;
-  height: 104px;
-  padding-bottom: 24px;
-}
-
-
-
-
-.artist-bio {
-  display: -webkit-box;
-  color: #FFF;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 130%;
-  letter-spacing: -0.01em;
-}
-
-.lea {
-  background-color: #060307;
-  outline: none;
-  font-family: 'Arial', sans-serif;
-  /* Шрифт */
-  font-size: 16px;
-  /* Розмір тексту */
-  font-weight: 600;
-  /* Жирність */
-  color: #ffffff;
-  /* Колір тексту */
-  text-transform: uppercase;
-  /* Всі літери великі */
-  letter-spacing: 1px;
-  /* Інтервал між літерами */
-  text-align: center;
-  /* Вирівнювання тексту по центру */
-  padding: 10px 20px;
-  border: none;
-}
-
-.lea::before {
-  content: "";
-  position: absolute;
-  left: 450px;
-  width: 16px;
-  height: 16px;
-  background-image: url('data:image/svg+xml;utf8,<svg fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
-
-.load {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  border-radius: 12px;
-  max-width: 288px;
-  width: 100%;
-  height: 47px;
-  box-shadow: 0 1px 2px 0 rgba(6, 3, 7, 0.05),
-    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
-    inset 0 0 0 1px rgba(6, 3, 7, 0.15);
-  background-color: #764191;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #FFF;
-  cursor: pointer;
-  margin-bottom: 64px;
-
-}
-
-.btn-icon {
-  max-width: 24px;
-  /* Задайте розмір іконки */
-  height: 24px;
-  order: 1;
-  padding-top: 5px;
-  fill: currentColor;
-}
-
-.text {
-  display: inline-block;
-  /* Текст у блоці для багаторядкового вирівнювання */
-  text-align: center;
-  /* Центрування тексту */
-  padding-right: 5px;
-}
-
-@media only screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-    padding: 0 32px;
-
-  }
-
-  .content {
-    display: block;
-    /* Повертаємо стандартний потік розташування */
-    flex-direction: unset;
-    /* Відміняємо flex-напрямок */
-    text-align: center;
-    /* Центруємо текст */
-
-  }
-
-  .list-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    /* 1 колонка за замовчуванням */
-    gap: 24px;
-    max-width: 640px;
-    margin: 0 auto;
-    list-style: none;
-    padding: 0;
-  }
-
-  .artist-card {
-    align-items: center;
-    text-align: center;
-  }
-
-  .artist-image {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .artist-image {
-
+  .wrapper-title {
+    box-sizing: border-box;
+    max-width: 288px;
     width: 100%;
+    padding-bottom: 32px;
+    text-align: left;
+  }
+
+
+
+  .title-blog {
+    max-width: 50px;
+    padding-left: 24px;
+    height: 24px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFF;
   }
 
 
   .subtitle-blog {
-    max-width: 704px;
-    height: 106px;
+    padding-left: 24px;
+    max-width: 288px;
+    height: 159px;
+    font-family: "Epilogue",
+      sans-serif;
+    text-align: left;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    color: #FFF;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* центрує кнопки/списки */
+    gap: 40px;
+    /* проміжок між секціями */
+    background-color: transparent;
+    margin-bottom: 32px;
+    margin-top: 32px;
+  }
+
+
+  .list-cards {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 24px;
+    /* max-width: 800px; */
     margin: 0 auto;
+    list-style: none;
+    /* padding: 0;
+ display: flex; */
+    flex-wrap: wrap;
 
-  }
-
-  .wrapper-title {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 740px;
-    height: 108px;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
-    padding: 0 64px;
+    justify-content: center;
   }
 
   .list-cards {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    list-style: none;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
 
-    justify-content: space-between;
   }
 
+  /*фото артиста*/
   .artist-card {
-    flex: 1 1 calc(50% - 12px);
-    /* 2 колонки з урахуванням gap */
+
+
+    background: #060307;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 288px;
+    min-height: 100%;
+    flex: 1 1 100%;
+    /* 1 колонка на мобілці */
+
+  }
+
+  .artist-image {
+
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    background-color: transparent;
+    display: block;
+    /* Максимум по ширині контейнера */
+    max-width: 320px;
+
+
+
+    margin: 0 auto;
+    /* Центруємо картку в списку */
+
+    box-sizing: border-box;
+
+  }
+
+  .artist-genre {
+    display: flex;
+    /* розташування в рядок */
+    gap: 16px;
+    flex-wrap: wrap;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #dcd0e0;
+
+  }
+
+  .genre {
+    display: flex;
+    flex-wrap: wrap;
+    /* Дозволяє перенос елементів на новий рядок */
+    gap: 16px;
+    /* Відстань між елементами */
+    max-width: 600px;
+    /* Ширина контейнера */
+    margin: 0 auto;
+    /* Центрування контейнера */
+    justify-content: center;
+    /* Центрування елементів */
+    list-style: none;
+  }
+
+  .artist-genre::after {
+    content: '';
+
+  }
+
+
+  .artist-name {
+    color: #FFF;
+  }
+
+  /* Контейнер кожного елемента */
+  .card-grid {
+
+    display: flex;
+    flex-direction: column;
+    /* Елементи в стовпчик */
+    align-items: center;
+    /* Вирівнюємо по центру */
+    text-align: center;
+
+
+  }
+
+  /* Зображення */
+  .card-grid img {
+    width: 100%;
+    /* Займає всю ширину контейнера */
+    height: auto;
+    /* Зберігає пропорції */
+
+  }
+
+  .learn-more {
+    position: relative;
+    width: 125px;
+    height: 27px;
+    background-color: #060307;
+    /* колір можна змінити */
+    color: rgb(255, 255, 255);
+    /* колір тексту */
+    border: none;
+    border-radius: 6px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    /* щоб точно по висоті */
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .reference {
+    max-width: 288px;
+    height: 104px;
+    padding-bottom: 24px;
+  }
+
+
+
+
+  .artist-bio {
+
+    color: #FFF;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+
+  .lea {
+    background-color: #060307;
+    outline: none;
+    font-family: 'Arial', sans-serif;
+    /* Шрифт */
+    font-size: 16px;
+    /* Розмір тексту */
+    font-weight: 600;
+    /* Жирність */
+    color: #ffffff;
+    /* Колір тексту */
+    text-transform: uppercase;
+    /* Всі літери великі */
+    letter-spacing: 1px;
+    /* Інтервал між літерами */
+    text-align: center;
+    /* Вирівнювання тексту по центру */
+    padding: 10px 20px;
+    border: none;
+  }
+
+  .lea::before {
+    content: "";
+    position: absolute;
+    left: 450px;
+    width: 16px;
+    height: 16px;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+
+  .load {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    border-radius: 12px;
+    max-width: 288px;
+    width: 100%;
+    height: 47px;
+    box-shadow: 0 1px 2px 0 rgba(6, 3, 7, 0.05),
+      inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+      inset 0 0 0 1px rgba(6, 3, 7, 0.15);
+    background-color: #764191;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #FFF;
+    cursor: pointer;
+    margin-bottom: 64px;
+
+  }
+
+  .btn-icon {
+    max-width: 24px;
+    /* Задайте розмір іконки */
+    height: 24px;
+    order: 1;
+    padding-top: 5px;
+    fill: currentColor;
+  }
+
+  .text {
+    display: inline-block;
+    /* Текст у блоці для багаторядкового вирівнювання */
+    text-align: center;
+    /* Центрування тексту */
+    padding-right: 5px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .container {
+      max-width: 768px;
+      padding: 0 32px;
+
+    }
+
+    .content {
+      display: block;
+      /* Повертаємо стандартний потік розташування */
+      flex-direction: unset;
+      /* Відміняємо flex-напрямок */
+      text-align: center;
+      /* Центруємо текст */
+
+    }
+
+    .list-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* 1 колонка за замовчуванням */
+      gap: 24px;
+      max-width: 640px;
+      margin: 0 auto;
+      list-style: none;
+      padding: 0;
+    }
+
+    .artist-card {
+      /*фото артиста*/
+      max-width: 704px;
+      /* 1 колонка на tab */
+      align-items: center;
+      text-align: center;
+    }
+
+    .artist-image {
+      display: block;
+      margin: 0 auto;
+      width: 704px;
+      max-width: 100%;
+      height: auto;
+
+    }
+
+    .artist-image {
+
+      width: 100%;
+    }
+
+        .wrapper-title {
+          box-sizing: border-box;
+          width: 100%;
+          max-width: 740px;
+          height: 108px;
+          padding: 0 auto;
+          margin: 0 auto;
+        }
+    .subtitle-blog {
+      max-width: 704px;
+      height: 106px;
+      margin: 0 auto;
+
+    }
+
+   
+  }
+
+  @media only screen and (min-width: 1440px) {
+    .container {
+      max-width: 1440px;
+      padding: 0 64px;
+    }
+
+    .wrapper-title {
+
+      max-width: 863px;
+      height: 184px;
+    }
+
+    .subtitle-blog {
+      max-width: 863px;
+      height: 144px;
+      margin: 0 auto;
+    }
+
+    .list-cards {
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* ✅ Два артисти в ряд */
+      gap: 24px;
+      justify-items: center;
+      justify-items: stretch;
+      /* Картки розтягуються по ширині */
+      margin: 0 auto;
+      list-style: none;
+      padding: 0;
+      grid-template-columns: 600px 600px;
+      /* Перший стовпець 200px, другий - 300px */
+      grid-template-rows: 390px 390px;
+      /* Перший рядок 100px, другий - 150px */
+    }
+
+    .artist-card {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+
+      width: 100%;
+      /* Картка займає всю ширину колонки */
+      text-align: center;
+    }
+
+  }
+
+  .artist-card img {
+    width: 100%;
+    /* Зображення займає всю ширину картки */
+    height: 300%;
+    /* Зображення масштабується у висоту */
+    object-fit: cover;
+    /* Зображення обрізається, щоб заповнити картку */
+  }
+
+  .artist-card h3,
+  .artist-card p,
+  .artist-card button {
+    margin: 8px 0;
   }
 
   .wrapper-title {
@@ -391,12 +445,24 @@
     max-width: 863px;
     padding-bottom: 32px;
 
-    /* text-align: center; */
+
+
   }
 
   .subtitle-blog {
     max-width: 523px;
     height: 144px;
+  }
+
+  .card-grid {
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    /* Елементи в стовпчик */
+    align-items: center;
+    /* Вирівнюємо по центру */
+    text-align: center;
   }
 
 }
