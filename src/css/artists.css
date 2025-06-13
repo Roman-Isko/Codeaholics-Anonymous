@@ -17,6 +17,7 @@
 }
 
 
+
 .title-blog {
   max-width: 50px;
   padding-left: 24px;
@@ -55,6 +56,7 @@
   margin-top: 32px;
 }
 
+
 .list-cards {
   display: flex;
   /* flex-direction: column; */
@@ -65,14 +67,14 @@
   /* padding: 0;
  display: flex; */
   flex-wrap: wrap;
+
   justify-content: center;
 }
-
 
 .list-cards {
   display: flex;
   list-style: none;
-  /* align-items: flex-start; */
+  align-items: flex-start;
   padding: 0;
   margin: 0;
 
@@ -80,6 +82,12 @@
 
 /*фото артиста*/
 .artist-card {
+  /* background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  text-align: center; */
+
   background: #060307;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -164,8 +172,18 @@
   align-items: center;
   /* Вирівнюємо по центру */
   text-align: center;
+
+
 }
 
+/* Зображення */
+.card-grid img {
+  width: 100%;
+  /* Займає всю ширину контейнера */
+  height: auto;
+  /* Зберігає пропорції */
+
+}
 
 .learn-more-btn {
   width: 125px;
@@ -197,20 +215,18 @@
   padding-bottom: 24px;
 }
 
-.artist-genre {
-  flex-direction: column;
-  gap: 16px;
-}
+
+
 
 .artist-bio {
-
+  display: -webkit-box;
   color: #FFF;
   overflow: hidden;
   text-overflow: ellipsis;
-
-
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
   line-clamp: 2;
-
+  -webkit-box-orient: vertical;
   font-weight: 700;
   font-size: 32px;
   line-height: 130%;
@@ -241,7 +257,7 @@
 .lea::before {
   content: "";
   position: absolute;
-  left: 220px;
+  left: 450px;
   width: 16px;
   height: 16px;
   background-image: url('data:image/svg+xml;utf8,<svg fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>');
@@ -298,44 +314,6 @@
 
   }
 
-  .wrapper-title {
-    max-width: 704px;
-  }
-
-  .subtitle-blog {
-    max-width: 704px;
-    height: 106px;
-  }
-
-  .card-grid {
-    /* Адаптивна ширина: третина від рядка */
-    max-width: calc(100% - 32px);
-  }
-
-  .lea::before {
-    content: "";
-    position: absolute;
-    left: 450px;
-    width: 16px;
-    height: 16px;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-  }
-
-  .list-cards {
-    display: flex;
-    /* Встановлюємо flex-контейнер */
-    flex-wrap: wrap;
-    /* Дозволяємо перенесення елементів */
-    flex-direction: column;
-    gap: 16px;
-    /* Відступи між картками */
-    justify-content: center;
-    /* Вирівнювання по центру */
-  }
-
   .content {
     display: block;
     /* Повертаємо стандартний потік розташування */
@@ -346,38 +324,20 @@
 
   }
 
+  .list-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* 1 колонка за замовчуванням */
+    gap: 24px;
+    max-width: 640px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+  }
 
   .artist-card {
-    background: #060307;
-    /* Задній фон */
-    border-radius: 12px;
-    /* Заокруглення */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Тінь */
-    padding: 16px;
-    /* Внутрішні відступи */
-    text-align: center;
-    /* Центрування тексту */
-
-    display: flex;
-    /* Flexbox для розташування */
-    flex-direction: column;
-    /* Вертикальне розташування */
-    justify-content: space-between;
-    /* Розподіл простору між елементами */
     align-items: center;
-    /* Центрування вмісту по горизонталі */
-
-    width: 100%;
-    /* Ширина займає весь доступний простір */
-    max-width: 100%;
-    /* Максимальна ширина 100% для адаптації */
-    min-height: auto;
-    /* Мінімальна висота автоматична */
-    flex: 1 1 auto;
-    /* Гнучкість розміру */
-    margin-bottom: 16px;
-    /* Відступ між картками */
+    text-align: center;
   }
 
   .artist-image {
@@ -386,6 +346,12 @@
     max-width: 100%;
     height: auto;
   }
+
+  .artist-image {
+
+    width: 100%;
+  }
+
 
   .subtitle-blog {
     max-width: 704px;
@@ -402,9 +368,6 @@
   }
 }
 
-
-
-
 @media only screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
@@ -412,127 +375,28 @@
   }
 
   .list-cards {
-    display: flex;
-    flex-wrap: wrap;
-    /* Дозволяє карткам переноситися */
-    gap: 32px;
-    /* Проміжок між картками */
-    justify-content: center;
-    /* Центрування контенту */
+    grid-template-columns: repeat(2, 1fr);
+
+    justify-content: space-between;
   }
 
   .artist-card {
-    flex: 0 0 calc((1312px - 32px) / 2);
-    /* Ширина картки з урахуванням відступів */
-    max-width: 640px;
-    /* Задаємо максимальну ширину картки */
-    height: auto;
-    /* Автоматична висота */
-    box-sizing: border-box;
-    /* Враховує відступи */
+    flex: 1 1 calc(50% - 12px);
+    /* 2 колонки з урахуванням gap */
   }
-
 
   .wrapper-title {
     box-sizing: border-box;
     width: 100%;
     max-width: 863px;
     padding-bottom: 32px;
+
+    /* text-align: center; */
   }
 
   .subtitle-blog {
     max-width: 523px;
     height: 144px;
   }
-
-  .lea::before {
-
-    left: 780px;
-
-  }
-
-
-  .artists-blog {
-    background-color: #060307;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    box-sizing: border-box;
-  }
-
-  .container {
-    max-width: 1312px;
-    margin: 0 auto;
-    padding: 0 64px;
-    /* Внутрішні відступи для контейнера */
-  }
-
-  .list-cards {
-    display: flex;
-    flex-wrap: wrap;
-    /* Дозволяємо перенесення карток */
-    gap: 32px;
-    /* Проміжок між картками */
-    justify-content: space-between;
-    /* Розподіляємо по рядках */
-  }
-
-  .artist-card {
-    background: #060307;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-    flex: 0 0 calc((1312px - 32px) / 2);
-    /* Дві колонки з урахуванням відступів */
-    max-width: 640px;
-    /* Ширина картки */
-  }
-
-  .artist-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    margin-bottom: 16px;
-  }
-
-  .artist-name {
-    color: #FFF;
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-
-  .artist-genre {
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #dcd0e0;
-    margin-bottom: 16px;
-  }
-
-  .learn-more-btn {
-    background-color: #764191;
-    color: #FFF;
-    border: none;
-    border-radius: 6px;
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .learn-more-btn:hover {
-    background-color: #5a326f;
-  }
-
 
 }

@@ -1,8 +1,12 @@
 
-// alert('feedback')
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
+// import Swiper from 'swiper/bundle';
+// import 'swiper/css/bundle';
+
+
 import 'css-star-rating/css/star-rating.min.css';
+import Swiper from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 
 import {getFeedbacks } from './sound-wave-api'
@@ -57,7 +61,6 @@ return `
 }
 
 
-
 const swiper = new Swiper('.swiper', {
  initialSlide: 0,
 navigation: {
@@ -67,6 +70,17 @@ navigation: {
 
 });
 
+
+const customNextBtn = document.querySelector('.custom-swiper-btn-next');
+const customPrevBtn = document.querySelector('.custom-swiper-btn-prev');
+
+customNextBtn.addEventListener('click', () => {
+  swiper.slideNext();
+});
+
+customPrevBtn.addEventListener('click', () => {
+  swiper.slidePrev();
+});
 
 
 renderFeedback();

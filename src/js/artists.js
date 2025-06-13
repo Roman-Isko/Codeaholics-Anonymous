@@ -32,13 +32,15 @@ export function createArtistCard(artist) {
         <li class="artist-card">
             <img src="${artist.strArtistThumb}" alt="${
     artist.strArtist
-  }" class="artist-image" data-id="${artist._id}" />
+  }" class="artist-image" />
             <h3 class="artist-name">${artist.strArtist}</h3>
             <p class="artist-genre">${artist.genres.join(', ')}</p>
             <p class="artist-bio" data-full="${
               artist.strBiographyEN
             }">${shortBio}</p>
-            <button class="learn-more">Learn More</button>
+            <button class="learn-more" data-id="${
+              artist._id
+            }">Learn More</button>
         </li>
     `;
 }
