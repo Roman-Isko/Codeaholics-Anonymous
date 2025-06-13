@@ -1,4 +1,3 @@
-// alert('menu')
 const iconBurger = document.querySelector('.burger-icon');
 const iconBurgerX = document.querySelector('.burger-icon-x');
 const menuList = document.querySelector('.header-nav-list');

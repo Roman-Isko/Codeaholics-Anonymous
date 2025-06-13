@@ -302,7 +302,6 @@
   
   .cont-image-text-modal {
     display: flex;
-    align-items: center;
     gap: 32px;
     margin-bottom: 48px;
   }
@@ -325,5 +324,33 @@
     flex-basis: calc((100% - 32px * 3) / 4);
     box-sizing: border-box;
     margin-bottom: 0;
+  }
+
+  .list-info-modal-artist {
+    margin-top: 0;
+  }
+
+  .info-modal-artist {
+    margin-top: 0;
+  }
+
+  .expandable-text {
+    max-height: 245px;
+    overflow-y: auto;
+    padding-right: 8px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.3);
+      border-radius: 3px;
+    }
+  }
+
+  .expand-btn {
+    display: none;
   }
 }

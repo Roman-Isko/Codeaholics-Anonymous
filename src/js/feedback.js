@@ -1,4 +1,3 @@
-
 import 'css-star-rating/css/star-rating.min.css';
 import Swiper from 'swiper';
 import 'swiper/css';

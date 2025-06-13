@@ -122,7 +122,7 @@ function renderArtist({
                 movieUrl
                   ? `<a class="link-track-modal-artist" href="${movieUrl}" target="_blank" rel="noopener noreferrer">
                       <svg class="icon-track-modal-artist" width="24" height="24">
-                        <use href="../public/icon/symbol-defs.svg#icon-Youtube"></use>
+                        <use href="icon/symbol-defs.svg#icon-Youtube"></use>
                       </svg>
                     </a>`
                   : '<div class="link-track-modal-artist"></div>'
