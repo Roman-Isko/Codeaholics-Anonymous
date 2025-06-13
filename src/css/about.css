@@ -93,12 +93,17 @@
 }
 
 /* Desktop view */
-@media (min-width: 1280px) {
+@media (min-width: 1440px) {
   .about-container {
     position: relative;
     display: flex;
+    justify-content: center;
     align-items: flex-start;
     gap: 64px;
+  }
+
+  .section.about {
+    padding: 64px 0;
   }
 
   .about-intro {
