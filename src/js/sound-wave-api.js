@@ -1,4 +1,3 @@
-// alert('api')
 import axios from 'axios';
 const soundWaveApi = axios.create({
   baseURL: 'https://sound-wave.b.goit.study/api',

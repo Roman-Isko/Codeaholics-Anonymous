@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 
 export async function fetchArtists(page = 1, limit = 8) {
