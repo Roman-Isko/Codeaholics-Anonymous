@@ -33,7 +33,6 @@ async function loadArtists(page = 1, limit = 8) {
 }
 
 function renderArtists(artists) {
-  artistsList.innerHTML = '';
   const markup = artists.map(createArtistCard).join('');
   artistsList.insertAdjacentHTML('beforeend', markup);
 }
