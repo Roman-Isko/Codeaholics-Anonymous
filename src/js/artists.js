@@ -21,14 +21,16 @@ export function createArtistCard(artist) {
   ) {
     return '';
   }
-
+  const genresMarkup = artist.genres
+    .map(genre => `<span class="genre">${genre}</span>`)
+    .join(', ');
   const shortBio =
     artist.strBiographyEN.length > 200
       ? artist.strBiographyEN.slice(0, 200) + '...'
       : artist.strBiographyEN;
 
   return `
-        <li class="artist-card">
+        < class="artist-card">
             <img src="${artist.strArtistThumb}" alt="${
     artist.strArtist
   }" class="artist-image" />
@@ -37,10 +39,10 @@ export function createArtistCard(artist) {
             <p class="artist-bio" data-full="${
               artist.strBiographyEN
             }">${shortBio}</p>
-            <button class="learn-more" data-id="${
-              artist._id
-            }">Learn More</button>
+          <div class="btn-wrapper"><button class="lea">Learn More</button>
+        <svg class="icon" width="16" height="16">
+            <use xlink:href="../public/icon/symbol-defs.svg#icon-arrow-caret-right"></use>
+        </svg></div>
         </li>
     `;
 }
-
