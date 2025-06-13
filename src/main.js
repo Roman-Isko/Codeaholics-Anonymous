@@ -1,15 +1,13 @@
-import './js/sound-wave-api.js'
-import './js/render-functions.js'
-import './js/menu.js'
-import './js/modal.js'
-import './js/artists.js'
-import './js/feedback.js'
+import './js/sound-wave-api.js';
+import './js/render-functions.js';
+import './js/menu.js';
+import './js/modal.js';
+import './js/artists.js';
+import './js/feedback.js';
 
 import { fetchArtists } from './js/artists.js';
 import { createArtistCard } from './js/artists.js';
 import { refs, fetchArtistData } from './js/modal.js';
-
-
 
 const artistsList = document.querySelector('.list-cards');
 const loadMoreBtn = document.getElementById('load-more');
@@ -54,9 +52,6 @@ document.addEventListener('click', event => {
     if (bioElement.classList.contains('expanded')) {
       bioElement.innerHTML = fullBio.slice(0, 200) + '...';
       event.target.textContent = 'Learn More';
-    } else {
-      bioElement.innerHTML = fullBio;
-      event.target.textContent = 'Show Less';
     }
 
     bioElement.classList.toggle('expanded');
