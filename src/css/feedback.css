@@ -6,8 +6,8 @@
 }
 
 .feedback-section {
-  padding-top: 64px;
-  padding-bottom: 64px;
+  /* padding-top: 64px; */
+  /* padding-bottom: 64px; */
   display: flex;
   flex-direction: column;
 }
@@ -70,7 +70,7 @@
   gap: 9px;
   z-index: 9999;
   position: absolute;
-  bottom: 100px;
+  bottom: 230px;
   width: 100%;
 }
 
@@ -124,6 +124,7 @@
 
   .feedback-text {
     font-size: 26px;
+  
   }
 
   .swiper-pagination {

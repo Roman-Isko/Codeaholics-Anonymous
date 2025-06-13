@@ -57,7 +57,7 @@ return `
 
 
 const swiper = new Swiper('.swiper', {
- initialSlide: 0,
+  initialSlide: 0,
 navigation: {
  nextEl: '.swiper-button-next',
  prevEl: '.swiper-button-prev',
@@ -100,3 +100,33 @@ if (index === 0) {
  }
 
 });
+dotFirst.addEventListener('click', () => {
+  swiper.slideTo(0); // Первый слайд
+  updateDotsActive(0);
+});
+
+dotLast.addEventListener('click', () => {
+  const total = swiper.slides.length;
+  swiper.slideTo(total - 1); // Последний слайд
+  updateDotsActive(total - 1);
+});
+
+dotCurrent.addEventListener('click', () => {
+  const total = swiper.slides.length;
+  const mid = Math.floor((total - 1) / 2); // Средний слайд
+  swiper.slideTo(mid);
+  updateDotsActive(mid);
+});
+function updateDotsActive(index) {
+  dotFirst.classList.remove('active');
+  dotCurrent.classList.remove('active');
+  dotLast.classList.remove('active');
+
+  if (index === 0) {
+    dotFirst.classList.add('active');
+  } else if (index === swiper.slides.length - 1) {
+    dotLast.classList.add('active');
+  } else {
+    dotCurrent.classList.add('active');
+  }
+}
