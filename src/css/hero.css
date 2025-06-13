@@ -3,7 +3,7 @@
   color: var(--Color-Scheme-1-Text, #ffffff);
   position: relative;
   min-width: 100vw;
-  margin-top: 72px;
+  margin-top: 64px;
 }
 .hero::before,
 .hero::after {
@@ -27,12 +27,9 @@
 
 .hero-container {
   text-align: left;
-  padding-left: 16px;
-  padding-right: 16px;
   overflow: hidden;
 }
 .hero-context {
-  padding-top: 64px;
   padding-bottom: 64px;
   position: relative;
   z-index: 2;
@@ -42,11 +39,15 @@
   font-weight: 700;
   font-size: 48px;
   margin-bottom: 20px;
+  line-height: 110%;
+  letter-spacing: -1%;
 }
 .hero-p {
   font-weight: 400;
   font-size: 18px;
   margin-bottom: 24px;
+  line-height: 150%;
+  letter-spacing: 0;
 }
 .hero-button {
   background-color: var(--Color-Affair, #764191);
@@ -60,6 +61,8 @@
 
   padding: 10px 0;
   font-weight: 500;
+  letter-spacing: 0;
+  line-height: 150%;
 
   text-align: center;
   justify-content: center;
@@ -77,18 +80,13 @@
 }
 
 .hero-img {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 
   background-image: url('/img/Content-mob-1x.webp');
-
-
-  background-blend-mode: multiply;
-
-
 }
 
 @media only screen and (min-resolution: 2x),
@@ -99,12 +97,10 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .hero-container {
-    padding-left: 32px;
-    padding-right: 32px;
+  .hero {
+    margin-top: 32px;
   }
   .hero-context {
-    padding-top: 32px;
     padding-bottom: 32px;
   }
   .title-hero {
@@ -115,15 +111,10 @@
     margin-bottom: 32px;
   }
   .hero-button {
-
     width: 246px;
-
-    /* padding-left: 44px; */
     margin-bottom: 0;
   }
-  /* .hero-icon {
-    padding-right: 44px;
-  } */
+
   .hero-img {
     background-image: url('/img/Content-tab-1x.webp');
   }
@@ -137,10 +128,11 @@
 }
 
 @media only screen and (min-width: 1440px) {
+  .hero {
+    margin-top: 0;
+  }
   .hero-container {
     display: flex;
-    padding: 0px 64px;
-
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
@@ -148,9 +140,10 @@
 
   .hero-context {
     width: 50%;
-    /* margin-right: 31px; */
     margin-top: auto;
     margin-bottom: auto;
+
+    padding-bottom: 0;
   }
   .title-hero {
     font-size: 84px;
