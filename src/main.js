@@ -1,13 +1,14 @@
 // import 'normalize.css';
-import './js/sound-wave-api.js'
-import './js/menu.js'
-import './js/feedback.js'
+import './js/sound-wave-api.js';
+import './js/menu.js';
+import './js/feedback.js';
 
 import { fetchArtists } from './js/artists.js';
 import { createArtistCard } from './js/artists.js';
 import { refs, fetchArtistData } from './js/modal.js';
 
-
+import { foo_artists_main } from './js/atrists-new.js';
+foo_artists_main();
 
 const artistsList = document.querySelector('.list-cards');
 const loadMoreBtn = document.getElementById('load-more');
@@ -25,7 +26,7 @@ async function loadArtists(page = 1, limit = 8) {
       );
     }
 
-    console.log(`Отримані артисти для сторінки ${page}:`, data.artists);
+    // console.log(`Отримані артисти для сторінки ${page}:`, data.artists);
     renderArtists(data.artists);
   } catch (error) {
     console.error('Помилка при завантаженні артистів:', error.message);
@@ -33,14 +34,13 @@ async function loadArtists(page = 1, limit = 8) {
 }
 
 function renderArtists(artists) {
-  
   const markup = artists.map(createArtistCard).join('');
   artistsList.insertAdjacentHTML('beforeend', markup);
 }
 
 loadMoreBtn.addEventListener('click', () => {
   currentPage++;
-  console.log(`Завантажуємо сторінку: ${currentPage}`);
+  // console.log(`Завантажуємо сторінку: ${currentPage}`);
   loadArtists(currentPage, limit);
 });
 
