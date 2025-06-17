@@ -8,12 +8,14 @@
   z-index: 100;
   height: 64px;
   background-color: rgba(6, 3, 7, 1);
+  display: flex;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 320px;
 }
 
 .header-logo {
@@ -34,9 +36,17 @@
   fill: #fff;
 }
 
-/* HEADER-TAB and HEADER-DESK*/
+/* HEADER-TAB */
 
 @media (min-width: 768px) {
+  .header-section {
+    height: 72px;
+    display: flex;
+  }
+  .header-container {
+    width: 704px;
+  }
+
   .header-nav {
     display: flex;
     justify-content: space-between;
@@ -57,5 +67,16 @@
 
   .burger-btn {
     display: none;
+  }
+}
+
+/* HEADER-DESK*/
+
+@media screen and (min-width: 1440px) {
+  .header-section {
+    display: flex;
+  }
+  .header-container {
+    width: 1440px;
   }
 }
