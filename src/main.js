@@ -7,8 +7,8 @@ import { fetchArtists } from './js/artists.js';
 import { createArtistCard } from './js/artists.js';
 import { refs, fetchArtistData } from './js/modal.js';
 
-import { foo_artists_main } from './js/atrists-new.js';
-foo_artists_main();
+import { createArtistsList } from './js/atrists-new.js';
+createArtistsList();
 
 const artistsList = document.querySelector('.list-cards');
 const loadMoreBtn = document.getElementById('load-more');
