@@ -1,12 +1,5 @@
+import { refs } from './refs.js';
 import { getArtistByID } from './sound-wave-api.js';
-
-export const refs = {
-  loader: document.querySelector('.show-loader'),
-  btnCloseModalArtist: document.querySelector('.btn-close-modal-artist'),
-  modalArtist: document.querySelector('.modal-artist'),
-  modalOverlayArtist: document.querySelector('.modal-overlay-artist'),
-  elemListCards: document.querySelector('.list-cards'),
-};
 
 export async function fetchArtistData(id) {
   try {

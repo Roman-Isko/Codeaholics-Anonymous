@@ -1,46 +1,78 @@
-import axios from 'axios';
+import { refs } from './refs.js';
+import { getArtists } from './sound-wave-api.js';
 
-export async function fetchArtists(page = 1, limit = 8) {
-  const url = `https://sound-wave.b.goit.study/api/artists?page=${page}&limit=${limit}`;
-
+export async function fetchArtistsData(limit, page) {
   try {
-    const { data } = await axios.get(url);
-    return data;
+    showLoader();
+    const response = await getArtists({
+      limit,
+      page,
+    });
+    return response.data;
   } catch (error) {
-    console.error('Помилка отримання артистів:', error);
-    return null;
+    console.error('Error fetching artists data:', error);
+  } finally {
+    hideLoader();
   }
 }
-export function createArtistCard(artist) {
-  if (
-    !artist ||
-    !artist.strArtistThumb ||
-    !artist.strArtist ||
-    !artist.genres ||
-    !artist.strBiographyEN
-  ) {
-    return '';
-  }
 
-  const shortBio =
-    artist.strBiographyEN.length > 200
-      ? artist.strBiographyEN.slice(0, 200) + '...'
-      : artist.strBiographyEN;
-
-  return `
-        <li class="artist-card">
-            <img src="${artist.strArtistThumb}" alt="${
-    artist.strArtist
-  }" class="artist-image" />
-            <h3 class="artist-name">${artist.strArtist}</h3>
-            <p class="artist-genre">${artist.genres.join(', ')}</p>
-            <p class="artist-bio" data-full="${
-              artist.strBiographyEN
-            }">${shortBio}</p>
-            <button class="learn-more" data-id="${
-              artist._id
-            }">Learn More</button>
-        </li>
-    `;
+function artistTamplate({
+  _id,
+  strArtist,
+  strBiographyEN,
+  strArtistThumb,
+  genres,
+}) {
+  return `<li class="artists-card-item">
+          <img class="artists-image"
+            src=${strArtistThumb} />
+          </a>
+          <div class="artists-info">
+            <ul class="aritists-genre-list">
+            ${renderGenres(genres)}
+            </ul>
+            <p class="artists-name">${strArtist}</p>
+            <p class="artists-bio">${strBiographyEN}</p>
+            <button type="button" class="learn-more-btn" data-id="${_id}">Learn More
+              <svg class="learn-more-icon" width="24" height="24">
+                <use href="icon/symbol-defs.svg#icon-arrow-caret-right"></use>
+              </svg>
+            </button>
+          </div>
+        </li>`;
 }
 
+function renderGenres(genres) {
+  return genres
+    .map(genre => `<li class="artists-genre-item">${genre}</li>`)
+    .join('');
+}
+
+function artistsTamplate(artists) {
+  return artists.map(artistTamplate).join('');
+}
+
+export function createGallery(artists) {
+  const markup = artistsTamplate(artists);
+  refs.elemListCards.insertAdjacentHTML('beforeend', markup);
+}
+
+function showLoader() {
+  refs.loaderListArtists.classList.add('loader');
+}
+
+function hideLoader() {
+  refs.loaderListArtists.classList.remove('loader');
+}
+
+export function showLoadMoreButton() {
+  console.log('showLoadMoreButton');
+  refs.loadMoreBtn.classList.remove('btn-load-more-hidden');
+}
+
+export function hideLoadMoreButton() {
+  console.log('hideLoadMoreButton');
+  console.log(refs.loadMoreBtn);
+  
+  refs.loadMoreBtn.classList.add('btn-load-more-hidden');
+}
