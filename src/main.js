@@ -1,67 +1,63 @@
 // import 'normalize.css';
-import './js/sound-wave-api.js'
-import './js/menu.js'
-import './js/feedback.js'
+import './js/sound-wave-api.js';
+import './js/menu.js';
+import './js/feedback.js';
 
-import { fetchArtists } from './js/artists.js';
-import { createArtistCard } from './js/artists.js';
-import { refs, fetchArtistData } from './js/modal.js';
+import { refs } from './js/refs.js';
+import { fetchArtistData } from './js/modal.js';
+import {
+  fetchArtistsData,
+  createGallery,
+  showLoadMoreButton,
+  hideLoadMoreButton,
+} from './js/artists.js';
 
+let limit = 8;
+let page = 1;
+let maxPage;
 
+createArtistsList();
+refs.loadMoreBtn.addEventListener('click', loadMore);
 
-const artistsList = document.querySelector('.list-cards');
-const loadMoreBtn = document.getElementById('load-more');
-
-let currentPage = 1;
-const limit = 8;
-
-async function loadArtists(page = 1, limit = 8) {
+export async function createArtistsList() {
   try {
-    const data = await fetchArtists(page, limit);
-
-    if (!data || !data.artists || !Array.isArray(data.artists)) {
-      throw new Error(
-        'Невірний формат даних: artists відсутній або не є масивом'
-      );
-    }
-
-    console.log(`Отримані артисти для сторінки ${page}:`, data.artists);
-    renderArtists(data.artists);
+    const { artists, totalArtists } = await fetchArtistsData(limit, page);
+    maxPage = Math.ceil(totalArtists / limit);
+    createGallery(artists);
   } catch (error) {
-    console.error('Помилка при завантаженні артистів:', error.message);
+    console.error('Error loading artists data:', error);
+  } finally {
+    updateLoadMoreButton();
   }
 }
 
-function renderArtists(artists) {
-  
-  const markup = artists.map(createArtistCard).join('');
-  artistsList.insertAdjacentHTML('beforeend', markup);
+async function loadMore() {
+  page++;
+
+  try {
+    const { artists, totalArtists } = await fetchArtistsData(limit, page);
+    createGallery(artists);
+    const elemArtistsCard = document.querySelector('.artists-card-item');
+    const { height: cardHeight } = elemArtistsCard.getBoundingClientRect();
+
+    window.scrollBy({
+      top: cardHeight,
+      behavior: 'smooth',
+    });
+  } catch (error) {
+    console.error('Error loading artists data:', error);
+  } finally {
+    updateLoadMoreButton();
+  }
 }
 
-loadMoreBtn.addEventListener('click', () => {
-  currentPage++;
-  console.log(`Завантажуємо сторінку: ${currentPage}`);
-  loadArtists(currentPage, limit);
-});
-
-document.addEventListener('click', event => {
-  if (event.target.classList.contains('learn-more')) {
-    const bioElement = event.target.previousElementSibling;
-    const fullBio = bioElement.dataset.full;
-    if (!fullBio) return;
-    if (bioElement.classList.contains('expanded')) {
-      bioElement.innerHTML = fullBio.slice(0, 200) + '...';
-      event.target.textContent = 'Learn More';
-    } else {
-      bioElement.innerHTML = fullBio;
-      event.target.textContent = 'Show Less';
-    }
-
-    bioElement.classList.toggle('expanded');
+function updateLoadMoreButton() {
+  if (page < maxPage) {
+    showLoadMoreButton();
+  } else {
+    hideLoadMoreButton();
   }
-});
-
-loadArtists();
+}
 
 refs.elemListCards.addEventListener('click', openModalArtist);
 

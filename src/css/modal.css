@@ -28,12 +28,11 @@
 .modal-artist {
   position: relative;
   width: 288px;
-  max-height: 85%;
+  max-height: 100%;
   overflow-y: auto;
   border-radius: 16px;
   background-color: #060307;
-
-    overflow-y: overlay;
+  overflow-y: overlay;
 }
 
 .modal-artist::-webkit-scrollbar {
@@ -52,7 +51,6 @@
 .modal-artist::-webkit-scrollbar-thumb:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
-
 
 .container-modal-artist {
   padding: 52px 8px;
@@ -299,7 +297,7 @@
   .modal-artist {
     width: 1312px;
   }
-  
+
   .cont-image-text-modal {
     display: flex;
     gap: 32px;
@@ -313,7 +311,6 @@
   .image-modal-artist {
     width: 576px;
     object-fit: contain;
-    
   }
 
   .info-about-artist {
@@ -345,7 +342,7 @@
       width: 6px;
     }
     &::-webkit-scrollbar-thumb {
-      background: rgba(255,255,255,0.3);
+      background: rgba(255, 255, 255, 0.3);
       border-radius: 3px;
     }
   }

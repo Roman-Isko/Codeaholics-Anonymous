@@ -1,15 +1,18 @@
 import axios from 'axios';
+
 const soundWaveApi = axios.create({
   baseURL: 'https://sound-wave.b.goit.study/api',
 });
-export async function getArtists() {
+
+export async function getArtists(params = {}) {
   try {
-    return await soundWaveApi.get('/artists');
+    return await soundWaveApi.get('/artists', { params });
   } catch (error) {
     console.error('Помилка при отриманні списку артистів:', error);
     throw error;
   }
 }
+
 export async function getArtistByID(id) {
   try {
     return await soundWaveApi.get(`/artists/${id}`);
@@ -18,6 +21,7 @@ export async function getArtistByID(id) {
     throw error;
   }
 }
+
 export async function getFeedbacks() {
   try {
     return await soundWaveApi.get('/feedbacks');
