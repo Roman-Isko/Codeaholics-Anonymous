@@ -1,138 +1,92 @@
-.section.about {
-  padding: 64px 20px;
-}
-
-.about-container {
-  position: relative;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.about-picture {
-  display: block;
-  width: 100%;
+.about-us {
+  padding: 64px 0;
 }
 
 .about-img {
   width: 100%;
-  height: auto;
-  border-radius: 12px;
-  display: block;
-  max-width: 100%;
+  border-radius: 16px;
+  margin-bottom: 48px;
+}
+
+.about-content {
+  text-align: left;
 }
 
 .about-icon {
   display: block;
   width: 64px;
   height: 64px;
-  margin-top: 24px;
+  margin-bottom: 20px;
   fill: aliceblue;
 }
 
-.about-content {
-  margin-top: 24px;
-  text-align: left;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
 .about-title {
-  font-size: 28px;
+  font-family: 'Epilogue', sans-serif;
   font-weight: 700;
-  margin-bottom: 20px;
+  font-size: 44px;
   line-height: 1.2;
-  text-align: left;
-  word-wrap: break-word;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
 }
 
 .about-text {
-  font-size: 16px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
   line-height: 1.5;
-  text-align: left;
-  word-wrap: break-word;
 }
 
 /* Tablet view */
 @media (min-width: 768px) and (max-width: 1279px) {
-  .section.about {
-    padding: 64px 32px;
-  }
-
   .about-img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    display: block;
-  }
-
-  .about-icon {
-    display: block;
-    width: 80px;
-    height: 80px;
-    margin-top: 24px;
-    margin-left: 0;
-  }
-
-  .about-content {
-    margin-top: 24px;
-    max-width: 704px;
-    padding-left: 0;
-  }
-
-  .about-title {
-    font-size: 36px;
     margin-bottom: 24px;
-    text-align: left;
-  }
-
-  .about-text {
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: left;
-  }
-}
-
-/* Desktop view */
-@media (min-width: 1440px) {
-  .about-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 64px;
-  }
-
-  .section.about {
-    padding: 64px 0;
-  }
-
-  .about-intro {
-    position: relative;
-    flex-shrink: 0;
   }
 
   .about-icon {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    margin-left: 64px;
     width: 80px;
     height: 80px;
-  }
-
-  .about-content {
-    position: relative;
-    max-width: 500px;
-    padding-top: 104px;
+    margin-bottom: 24px;
   }
 
   .about-title {
-    font-size: 48px;
     margin-bottom: 24px;
   }
 
   .about-text {
     font-size: 20px;
-    line-height: 1.6;
+  }
+}
+
+/* Desktop view */
+@media (min-width: 1440px) {
+  .about-us {
+    padding: 112px 0;
+  }
+
+  .about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .about-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 24px;
+  }
+
+  .about-img {
+    max-width: 640px;
+    height: 664px;
+    margin: 0;
+  }
+
+  .about-content {
+    max-width: 640px;
+  }
+
+  .about-title {
+    font-size: 60px;
   }
 }
