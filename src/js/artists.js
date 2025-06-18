@@ -16,7 +16,7 @@ export async function fetchArtistsData(limit, page) {
   }
 }
 
-function artistTamplate({
+function artistTemplate({
   _id,
   strArtist,
   strBiographyEN,
@@ -25,10 +25,10 @@ function artistTamplate({
 }) {
   return `<li class="artists-card-item">
           <img class="artists-image"
-            src=${strArtistThumb} />
-          </a>
+            src=${strArtistThumb}
+            alt="artist photo ${strArtist}" />
           <div class="artists-info">
-            <ul class="aritists-genre-list">
+            <ul class="artists-genre-list">
             ${renderGenres(genres)}
             </ul>
             <p class="artists-name">${strArtist}</p>
@@ -48,12 +48,12 @@ function renderGenres(genres) {
     .join('');
 }
 
-function artistsTamplate(artists) {
-  return artists.map(artistTamplate).join('');
+function artistsTemplate(artists) {
+  return artists.map(artistTemplate).join('');
 }
 
 export function createGallery(artists) {
-  const markup = artistsTamplate(artists);
+  const markup = artistsTemplate(artists);
   refs.elemListCards.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -66,13 +66,9 @@ function hideLoader() {
 }
 
 export function showLoadMoreButton() {
-  console.log('showLoadMoreButton');
   refs.loadMoreBtn.classList.remove('btn-load-more-hidden');
 }
 
 export function hideLoadMoreButton() {
-  console.log('hideLoadMoreButton');
-  console.log(refs.loadMoreBtn);
-  
   refs.loadMoreBtn.classList.add('btn-load-more-hidden');
 }

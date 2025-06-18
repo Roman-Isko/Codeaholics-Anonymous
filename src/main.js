@@ -22,12 +22,7 @@ refs.loadMoreBtn.addEventListener('click', loadMore);
 export async function createArtistsList() {
   try {
     const { artists, totalArtists } = await fetchArtistsData(limit, page);
-    console.log('Артисты:', artists);
-    console.log('Всего артистов:', totalArtists);
-
     maxPage = Math.ceil(totalArtists / limit);
-    console.log('maxPage =', maxPage);
-
     createGallery(artists);
   } catch (error) {
     console.error('Error loading artists data:', error);
@@ -38,12 +33,9 @@ export async function createArtistsList() {
 
 async function loadMore() {
   page++;
-  console.log('page =', page);
 
   try {
     const { artists, totalArtists } = await fetchArtistsData(limit, page);
-    console.log('+Артисты+:', artists);
-    console.log('Всего артистов:', totalArtists);
     createGallery(artists);
     const elemArtistsCard = document.querySelector('.artists-card-item');
     const { height: cardHeight } = elemArtistsCard.getBoundingClientRect();
