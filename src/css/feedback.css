@@ -6,8 +6,7 @@
 }
 
 .feedback-section {
-  /* padding-top: 64px; */
-  /* padding-bottom: 64px; */
+  padding: 64px 0;
   display: flex;
   flex-direction: column;
 }
@@ -25,6 +24,7 @@
   pointer-events: none;
   font-size: 22px;
   border: none;
+  margin-bottom: 32px;
 }
 
 .empty {
@@ -49,7 +49,7 @@
   letter-spacing: -0.01em;
   text-align: center;
   color: #fff;
-  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .feedback-author {
@@ -59,7 +59,7 @@
   color: #fff;
   display: flex;
   justify-content: center;
-  margin-top: 32px;
+  margin-bottom: 16px;
 }
 
 /* ============================pagination================================== */
@@ -110,13 +110,6 @@
 }
 
 @media (min-width: 768px) {
-  .feedback {
-    padding-right: 93px;
-    padding-left: 93px;
-    /* max-width: 704px; */
-    padding-top: 64px;
-  }
-
   .custom-swiper-btn-prev,
   .custom-swiper-btn-next {
     display: block !important;
@@ -124,7 +117,6 @@
 
   .feedback-text {
     font-size: 26px;
-  
   }
 
   .swiper-pagination {
@@ -133,6 +125,10 @@
 }
 
 @media (min-width: 1440px) {
+  .feedback-section {
+    padding: 112px 0;
+  }
+
   .feedback-text {
     font-size: 32px;
     padding-bottom: 16px;
