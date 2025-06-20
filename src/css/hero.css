@@ -145,33 +145,33 @@
 @media only screen and (min-width: 1440px) {
   .hero-container {
     display: flex;
-    /* flex-wrap: nowrap; */
-    /* justify-content: space-between; */
-    /* align-items: center; */
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .hero-context {
-    width: 50%;
-    margin-top: auto;
-    margin-bottom: auto;
-
-    padding-bottom: 0;
+  .hero-gradient-top {
+    height: 80px;
   }
+
   .title-hero {
     font-size: 84px;
+    width: 640px;
   }
 
-  /* .hero-img {
+  .hero-p {
+    width: 640px;
+  }
+
+  .hero-img {
+    width: 641px;
+    height: 900px;
     background-image: url('/img/Content-desk-1x.webp');
-    background-position: left;
-    width: 50vw;
-    height: 100vh;
-    background-size: contain;
-    background-position: right;
-    position: absolute;
-    top: 0;
-    right: 64px;
-  } */
+  }
+
+  .hero-button {
+    width: 206px;
+  }
 }
 
 @media only screen and (min-resolution: 2x),
