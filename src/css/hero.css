@@ -1,73 +1,75 @@
 .hero {
-  background-color: var(--Color-Scheme-3-Foreground, #23132b);
-  color: var(--Color-Scheme-1-Text, #ffffff);
+  background-color: #23132b;
   position: relative;
-  min-width: 100vw;
   margin-top: 64px;
 }
-.hero::before,
-.hero::after {
-  content: '';
+
+.hero-gradient-top {
   position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 8vh;
-  z-index: 0;
-}
-
-.hero::before {
-  top: 0;
-  background: linear-gradient(to top, rgba(35, 19, 43, 1) 0%, #060307 100%);
-}
-
-.hero::after {
-  bottom: 0;
-  background: linear-gradient(to bottom, rgba(35, 19, 43, 1) 0%, #060307 100%);
-}
-
-.hero-container {
-  text-align: left;
-  overflow: hidden;
-}
-.hero-context {
-  padding-bottom: 64px;
-  position: relative;
+  height: 80px;
+  background: linear-gradient(0deg, rgba(35, 19, 43, 0) 0%, #060307 100%);
   z-index: 2;
+  pointer-events: none;
+}
+
+.hero-gradient-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 106px;
+  background: linear-gradient(180deg, rgba(35, 19, 43, 0) 0%, #060307 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-context {
+  position: relative;
+  z-index: 3;
+  padding: 64px 0;
 }
 
 .title-hero {
-  font-weight: 700;
+  font-family: 'Epilogue', sans-serif;
   font-size: 48px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-align: left;
   margin-bottom: 20px;
-  line-height: 110%;
-  letter-spacing: -1%;
 }
+
 .hero-p {
-  font-weight: 400;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 18px;
+  text-align: left;
   margin-bottom: 24px;
-  line-height: 150%;
-  letter-spacing: 0;
 }
+
 .hero-button {
-  background-color: var(--Color-Affair, #764191);
   display: flex;
-  width: 100%;
-  font-size: 18px;
-  border: none;
-
-  color: var(--Color-Scheme-1-Text, #ffffff);
-  border-radius: 12px;
-
-  padding: 10px 0;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 150%;
-
-  text-align: center;
+  gap: 12px;
   justify-content: center;
   align-items: center;
+  width: 280px;
+  padding: 10px 24px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 18px;
+  background-color: #764191;
+  box-shadow: 0 1px 2px 0 rgba(6, 3, 7, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(6, 3, 7, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: none;
+  margin: 0 auto;
+  transition: color 250ms ease-in-out, background 250ms ease-in-out;
 }
+
 .hero-button:hover,
 .hero-button:focus,
 .hero-icon:hover,
@@ -75,17 +77,13 @@
   color: #7a3145;
   background-color: #d4bfc4;
 }
-.hero-icon {
-  margin-left: 12px;
-}
 
 .hero-img {
   width: 100%;
-  height: 100vh;
+  height: 385px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
   background-image: url('/img/Content-mob-1x.webp');
 }
 
@@ -98,25 +96,41 @@
 
 @media only screen and (min-width: 768px) {
   .hero {
-    margin-top: 32px;
+    margin-top: 72px;
   }
+
+  .hero-gradient-top {
+    height: 125px;
+  }
+
+  .hero-gradient-bottom {
+    height: 137px;
+  }
+
   .hero-context {
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding: 32px 0;
   }
+
   .title-hero {
+    width: 624px;
     margin-bottom: 24px;
   }
+
   .hero-p {
     font-size: 20px;
+    width: 624px;
     margin-bottom: 32px;
   }
+
   .hero-button {
     width: 246px;
-    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: auto;
   }
 
   .hero-img {
+    width: 704px;
+    height: 632px;
     background-image: url('/img/Content-tab-1x.webp');
   }
 }
@@ -131,10 +145,9 @@
 @media only screen and (min-width: 1440px) {
   .hero-container {
     display: flex;
-
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
+    /* flex-wrap: nowrap; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
   }
 
   .hero-context {
@@ -148,15 +161,19 @@
     font-size: 84px;
   }
 
-  .hero-img {
+  /* .hero-img {
     background-image: url('/img/Content-desk-1x.webp');
     background-position: left;
     width: 50vw;
     height: 100vh;
     background-size: contain;
     background-position: right;
-  }
+    position: absolute;
+    top: 0;
+    right: 64px;
+  } */
 }
+
 @media only screen and (min-resolution: 2x),
   (-webkit-min-device-pixel-ratio: 2x) {
   .hero-img {
