@@ -84,14 +84,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url('/img/Content-mob-1x.webp');
-}
-
-@media only screen and (min-resolution: 2x),
-  (-webkit-min-device-pixel-ratio: 2x) {
-  .hero-img {
-    background-image: url('/img/Content-mob-2x.webp');
-  }
+  background-image: image-set(
+    url('/img/Content-mob-1x.webp') 1x,
+    url('/img/content-mob-2x.webp') 2x
+  );
 }
 
 @media only screen and (min-width: 768px) {
@@ -131,14 +127,10 @@
   .hero-img {
     width: 704px;
     height: 632px;
-    background-image: url('/img/Content-tab-1x.webp');
-  }
-}
-
-@media only screen and (min-resolution: 2x),
-  (-webkit-min-device-pixel-ratio: 2x) {
-  .hero-img {
-    background-image: url('/img/Content-tab-2x.webp');
+    background-image: image-set(
+      url('/img/Content-tab-1x.webp') 1x,
+      url('/img/Content-tab-2x.webp') 2x
+    );;
   }
 }
 
@@ -166,17 +158,13 @@
   .hero-img {
     width: 641px;
     height: 900px;
-    background-image: url('/img/Content-desk-1x.webp');
+    background-image: image-set(
+      url('/img/Content-desk-1x.webp') 1x,
+      url('/img/content-desk-2x.webp') 2x
+    );
   }
 
   .hero-button {
     width: 206px;
-  }
-}
-
-@media only screen and (min-resolution: 2x),
-  (-webkit-min-device-pixel-ratio: 2x) {
-  .hero-img {
-    background-image: url('/img/Content-desk-2x.webp');
   }
 }
