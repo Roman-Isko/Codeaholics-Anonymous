@@ -27,15 +27,18 @@ async function renderFeedback() {
   const info = data.data;
 
   const markup = info
+    .slice(0, 10)
     .map(item => {
       let rating = item.rating;
 
       return `
  <div class="swiper-slide">
-<div class="feedback-rating-display"> ${renderStarsSimple(rating)}</div>
+<div class="feedback-card">
+<div class="feedback-rating-display"> ${renderStarsSimple(rating)} </div>
  <p class="feedback-text">"${item.descr}"</p>
  <p class="feedback-author">${item.name}</p>
  </div>
+</div>
 `;
     })
     .join('');

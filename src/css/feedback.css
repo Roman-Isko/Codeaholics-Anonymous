@@ -7,8 +7,6 @@
 
 .feedback-section {
   padding: 64px 0;
-  display: flex;
-  flex-direction: column;
 }
 
 .swiper {
@@ -42,27 +40,32 @@
 
 /* =====================card========================== */
 
+.feedback-card {
+  max-width: 288px;
+  margin-bottom: 16px;
+}
+
 .feedback-text {
+  font-family: 'Epilogue', sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.4;
   letter-spacing: -0.01em;
   text-align: center;
-  color: #fff;
   margin-bottom: 32px;
 }
 
 .feedback-author {
+  font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.5;
-  color: #fff;
   display: flex;
   justify-content: center;
-  margin-bottom: 16px;
 }
 
 /* ============================pagination================================== */
+
 .swiper-pagination {
   display: flex;
   justify-content: center;
@@ -70,7 +73,7 @@
   gap: 9px;
   z-index: 9999;
   position: absolute;
-  bottom: 230px;
+  bottom: 0;
   width: 100%;
 }
 
@@ -110,6 +113,12 @@
 }
 
 @media (min-width: 768px) {
+  .feedback-card {
+    max-width: 518px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+  }
+
   .custom-swiper-btn-prev,
   .custom-swiper-btn-next {
     display: block !important;
@@ -118,10 +127,6 @@
   .feedback-text {
     font-size: 26px;
   }
-
-  .swiper-pagination {
-    bottom: 150px;
-  }
 }
 
 @media (min-width: 1440px) {
@@ -129,12 +134,13 @@
     padding: 112px 0;
   }
 
+  .feedback-card {
+    max-width: 866px;
+    margin-bottom: 75px;
+  }
+
   .feedback-text {
     font-size: 32px;
     padding-bottom: 16px;
-  }
-
-  .swiper-pagination {
-    bottom: 80px;
   }
 }
