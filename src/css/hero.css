@@ -85,7 +85,7 @@
   background-size: cover;
   background-position: center;
   background-image: image-set(
-    url('/img/Content-mob-1x.webp') 1x,
+    url('/img/content-mob-1x.webp') 1x,
     url('/img/content-mob-2x.webp') 2x
   );
 }
@@ -128,8 +128,8 @@
     width: 704px;
     height: 632px;
     background-image: image-set(
-      url('/img/Content-tab-1x.webp') 1x,
-      url('/img/Content-tab-2x.webp') 2x
+      url('/img/content-tab-1x.webp') 1x,
+      url('/img/content-tab-2x.webp') 2x
     );;
   }
 }
@@ -159,7 +159,7 @@
     width: 641px;
     height: 900px;
     background-image: image-set(
-      url('/img/Content-desk-1x.webp') 1x,
+      url('/img/content-desk-1x.webp') 1x,
       url('/img/content-desk-2x.webp') 2x
     );
   }
