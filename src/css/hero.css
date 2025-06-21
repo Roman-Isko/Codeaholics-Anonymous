@@ -85,7 +85,7 @@
   background-size: cover;
   background-position: center;
   background-image: image-set(
-    url('/img/content-mob-1x.webp') 1x,
+    url('/img/content-desk-1x.webp') 1x,
     url('/img/content-mob-2x.webp') 2x
   );
 }
