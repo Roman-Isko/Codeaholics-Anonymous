@@ -85,10 +85,12 @@
   background-size: cover;
   background-position: center;
   background-image: image-set(
-    url('/img/content-mob-1x.webp') 1x,
+    url('/img/hero-mob-1x.webp') 1x,
     url('/img/content-mob-2x.webp') 2x
   );
 }
+
+/* content-mob-1x.webp */
 
 @media only screen and (min-width: 768px) {
   .hero {
@@ -128,7 +130,7 @@
     width: 704px;
     height: 632px;
     background-image: image-set(
-      url('/img/content-tab-1x.webp') 1x,
+      url('/img/hero-tab-1x.webp') 1x,
       url('/img/content-tab-2x.webp') 2x
     );;
   }
@@ -159,7 +161,7 @@
     width: 641px;
     height: 900px;
     background-image: image-set(
-      url('/img/content-desk-1x.webp') 1x,
+      url('/img/hero-desk-1x.webp') 1x,
       url('/img/content-desk-2x.webp') 2x
     );
   }
