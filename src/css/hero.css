@@ -90,8 +90,6 @@
   );
 }
 
-/* content-mob-1x.webp */
-
 @media only screen and (min-width: 768px) {
   .hero {
     margin-top: 72px;

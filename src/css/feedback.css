@@ -14,8 +14,6 @@
   position: relative;
 }
 
-/* ============================stars============================ */
-
 .feedback-rating-display {
   display: flex;
   justify-content: center;
@@ -37,8 +35,6 @@
   color: white;
   text-shadow: 0 0 2px #999;
 }
-
-/* =====================card========================== */
 
 .feedback-card {
   max-width: 288px;
@@ -63,8 +59,6 @@
   display: flex;
   justify-content: center;
 }
-
-/* ============================pagination================================== */
 
 .swiper-pagination {
   display: flex;
