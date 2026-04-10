@@ -1,15 +1,10 @@
+import './js/sound-wave-api.js';
+import './js/render-functions.js';
+import './js/menu.js';
+import './js/feedback.js';
 
-import './js/sound-wave-api.js'
-import './js/render-functions.js'
-import './js/menu.js'
-import './js/modal.js'
-import './js/artists.js'
-import './js/feedback.js'
-
-import { fetchArtists } from './js/artists.js';
-import { createArtistCard } from './js/artists.js';
-
-
+import { fetchArtists, createArtistCard } from './js/artists.js';
+import { refs, fetchArtistData } from './js/modal.js';
 
 const artistsList = document.querySelector('.list-cards');
 const loadMoreBtn = document.getElementById('load-more');
@@ -28,23 +23,26 @@ async function loadArtists(page = 1, limit = 8) {
     }
 
     console.log(`Отримані артисти для сторінки ${page}:`, data.artists);
-    renderArtists(data.artists);
+    renderArtists(data.artists, { append: page > 1 });
   } catch (error) {
     console.error('Помилка при завантаженні артистів:', error.message);
   }
 }
 
-function renderArtists(artists) {
-  artistsList.innerHTML = '';
+function renderArtists(artists, { append = false } = {}) {
+  if (!artistsList) return;
+  if (!append) artistsList.innerHTML = '';
   const markup = artists.map(createArtistCard).join('');
   artistsList.insertAdjacentHTML('beforeend', markup);
 }
 
-loadMoreBtn.addEventListener('click', () => {
-  currentPage++;
-  console.log(`Завантажуємо сторінку: ${currentPage}`);
-  loadArtists(currentPage, limit);
-});
+if (loadMoreBtn) {
+  loadMoreBtn.addEventListener('click', () => {
+    currentPage++;
+    console.log(`Завантажуємо сторінку: ${currentPage}`);
+    loadArtists(currentPage, limit);
+  });
+}
 
 document.addEventListener('click', event => {
   if (event.target.classList.contains('learn-more')) {
@@ -52,10 +50,10 @@ document.addEventListener('click', event => {
     const fullBio = bioElement.dataset.full;
     if (!fullBio) return;
     if (bioElement.classList.contains('expanded')) {
-      bioElement.innerHTML = fullBio.slice(0, 200) + '...';
+      bioElement.textContent = fullBio.slice(0, 200) + '...';
       event.target.textContent = 'Learn More';
     } else {
-      bioElement.innerHTML = fullBio;
+      bioElement.textContent = fullBio;
       event.target.textContent = 'Show Less';
     }
 
@@ -65,3 +63,16 @@ document.addEventListener('click', event => {
 
 loadArtists();
 
+if (refs?.elemListCards) {
+  refs.elemListCards.addEventListener('click', openModalArtist);
+}
+
+async function openModalArtist(event) {
+  const target = event.target;
+  if (!target.closest('[data-id]')) return;
+
+  const { id } = target.closest('[data-id]').dataset;
+  if (!id) return;
+
+  await fetchArtistData(id);
+}

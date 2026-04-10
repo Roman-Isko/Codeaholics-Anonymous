@@ -1,28 +1,23 @@
 // alert('menu')
+const burgerBtn = document.querySelector('.burger-btn');
 const iconBurger = document.querySelector('.burger-icon');
 const iconBurgerX = document.querySelector('.burger-icon-x');
 const menuList = document.querySelector('.header-nav-list');
 const body = document.body;
 const svgBurger = document.querySelector('.burger-svg');
 
+if (burgerBtn && menuList && iconBurger && iconBurgerX) {
+  burgerBtn.addEventListener('click', openMenu);
 
-
-iconBurger.addEventListener('click', openMenu);
-iconBurgerX.addEventListener('click', openMenu);
-menuList.addEventListener('click', (evt) => {
-    
-
-    if(evt.target.nodeName === 'A') {
-        
-        menuList.classList.remove('active');
-        iconBurgerX.classList.remove('active');
-        iconBurger.classList.remove('active');
-        body.classList.remove('lock');
-
-
+  menuList.addEventListener('click', evt => {
+    if (evt.target?.nodeName === 'A') {
+      menuList.classList.remove('active');
+      iconBurgerX.classList.remove('active');
+      iconBurger.classList.remove('active');
+      body.classList.remove('lock');
     }
-    return;
-});
+  });
+}
 
 
 function openMenu(){
@@ -39,6 +34,5 @@ function openMenu(){
         body.classList.remove('lock');
     }
 
-    return
-
+    return;
 }

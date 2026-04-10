@@ -12,6 +12,16 @@ export async function fetchArtists(page = 1, limit = 8) {
     return null;
   }
 }
+
+function escapeAttribute(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;');
+}
+
 export function createArtistCard(artist) {
   if (
     !artist ||
@@ -32,13 +42,15 @@ export function createArtistCard(artist) {
         <li class="artist-card">
             <img src="${artist.strArtistThumb}" alt="${
     artist.strArtist
-  }" class="artist-image" data-id="${artist._id}" />
+  }" class="artist-image" />
             <h3 class="artist-name">${artist.strArtist}</h3>
             <p class="artist-genre">${artist.genres.join(', ')}</p>
-            <p class="artist-bio" data-full="${
+            <p class="artist-bio" data-full="${escapeAttribute(
               artist.strBiographyEN
-            }">${shortBio}</p>
-            <button class="learn-more">Learn More</button>
+            )}">${shortBio}</p>
+            <button class="learn-more" data-id="${
+              artist._id
+            }">Learn More</button>
         </li>
     `;
 }

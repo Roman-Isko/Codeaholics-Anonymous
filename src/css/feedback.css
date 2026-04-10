@@ -93,7 +93,7 @@
     gap: 9px;
     z-index: 9999;
     position: absolute;
-    bottom: 200px;
+    bottom: 100px;
     width: 100%;
 }
 
@@ -110,7 +110,8 @@
 .dot.active {
     background-color: white;
 }
-.custom-swiper-btn {
+.custom-swiper-btn-prev,
+.custom-swiper-btn-next {
     top: 50%;
     transform: translateY(-50%);
     border: 1px solid #ffffff;
@@ -123,7 +124,12 @@
 }
 
 
-.custom-swiper-btn .icon {
+.custom-swiper-btn-prev .icon {
+    width: 50px;
+    height: 50px;
+    fill: white;
+}
+.custom-swiper-btn-next .icon {
     width: 50px;
     height: 50px;
     fill: white;
@@ -141,13 +147,8 @@
 
     }
 
-    .icon.icon-arrow-right {
-        color: #764191;
-        background-color: #fff;
-    }
-
-    .custom-swiper-btn,
-    .swiper-button-prev {
+    .custom-swiper-btn-prev,
+    .custom-swiper-btn-next{
         display: block !important;
 
     }
@@ -174,6 +175,6 @@
     }
 
     .swiper-pagination {
-        bottom: 150px;
+        bottom: 80px;
     }
 }
